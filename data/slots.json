@@ -1,0 +1,697 @@
+{
+  "version": "1.0.0",
+  "categories": [
+    "進排氣",
+    "懸吊",
+    "煞車",
+    "輪胎輪圈",
+    "電腦程式",
+    "外觀空力",
+    "燈光",
+    "內裝",
+    "音響",
+    "傳動",
+    "引擎強化",
+    "其他"
+  ],
+  "slots": [
+    {
+      "slotId": "air-filter",
+      "name": "高流量空氣濾芯",
+      "category": "進排氣",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "intake-kit",
+      "name": "進氣套件",
+      "category": "進排氣",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "exhaust-header",
+      "name": "排氣歧管（頭段）",
+      "category": "進排氣",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "downpipe",
+      "name": "渦輪下導管",
+      "category": "進排氣",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "high-flow-cat",
+      "name": "高流量觸媒",
+      "category": "進排氣",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "exhaust-catback",
+      "name": "中後段排氣管",
+      "category": "進排氣",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "exhaust-slip-on",
+      "name": "排氣管尾段（slip-on）",
+      "category": "進排氣",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "exhaust-full-system",
+      "name": "全段排氣管",
+      "category": "進排氣",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "coilovers",
+      "name": "可調式避震器（避震彈簧組）",
+      "category": "懸吊",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "lowering-springs",
+      "name": "短彈簧",
+      "category": "懸吊",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "shock-absorbers",
+      "name": "替換避震器",
+      "category": "懸吊",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "sway-bars",
+      "name": "防傾桿",
+      "category": "懸吊",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "alignment",
+      "name": "四輪定位調校",
+      "category": "懸吊",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "air-suspension",
+      "name": "氣壓避震",
+      "category": "懸吊",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "offroad-lift-kit",
+      "name": "越野升高套件",
+      "category": "懸吊",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "fork-springs-cartridge",
+      "name": "前叉彈簧／油壓套件",
+      "category": "懸吊",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "steering-damper",
+      "name": "方向阻尼器",
+      "category": "懸吊",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "brake-pads",
+      "name": "煞車來令片",
+      "category": "煞車",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "brake-rotors",
+      "name": "煞車碟盤",
+      "category": "煞車",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "brake-fluid",
+      "name": "煞車油",
+      "category": "煞車",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "brake-lines",
+      "name": "不鏽鋼編織煞車油管",
+      "category": "煞車",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "brake-calipers",
+      "name": "煞車卡鉗／大卡鉗套件",
+      "category": "煞車",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "wheels",
+      "name": "輪圈",
+      "category": "輪胎輪圈",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "tires",
+      "name": "輪胎",
+      "category": "輪胎輪圈",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "all-terrain-tires",
+      "name": "越野／全地形輪胎",
+      "category": "輪胎輪圈",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "wheel-spacers",
+      "name": "輪圈墊寬片",
+      "category": "輪胎輪圈",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "tpms",
+      "name": "胎壓偵測器",
+      "category": "輪胎輪圈",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "ecu-tune",
+      "name": "ECU 調校",
+      "category": "電腦程式",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "front-lip",
+      "name": "前下巴",
+      "category": "外觀空力",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "side-skirts",
+      "name": "側裙",
+      "category": "外觀空力",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "rear-diffuser",
+      "name": "後下擾流板（後下巴）",
+      "category": "外觀空力",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "rear-wing",
+      "name": "尾翼",
+      "category": "外觀空力",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "fender-flares",
+      "name": "外擴葉子板／寬體套件",
+      "category": "外觀空力",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "body-wrap",
+      "name": "車身貼膜／改色",
+      "category": "外觀空力",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "window-tint",
+      "name": "隔熱紙／窗膜",
+      "category": "外觀空力",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "license-plate-frame",
+      "name": "車牌框",
+      "category": "外觀空力",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "mirrors",
+      "name": "後視鏡",
+      "category": "外觀空力",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "fairing-body",
+      "name": "車殼／整流罩",
+      "category": "外觀空力",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "windscreen",
+      "name": "風鏡",
+      "category": "外觀空力",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "tail-tidy",
+      "name": "短牌架",
+      "category": "外觀空力",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "headlights",
+      "name": "頭燈總成",
+      "category": "燈光",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "headlight-bulbs",
+      "name": "頭燈燈泡（HID／LED）",
+      "category": "燈光",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "fog-lights",
+      "name": "霧燈",
+      "category": "燈光",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "tail-lights",
+      "name": "尾燈",
+      "category": "燈光",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "turn-signals",
+      "name": "方向燈",
+      "category": "燈光",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "daytime-running-lights",
+      "name": "日行燈",
+      "category": "燈光",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "auxiliary-lights",
+      "name": "輔助燈／越野工作燈",
+      "category": "燈光",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "seats",
+      "name": "座椅",
+      "category": "內裝",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "steering-wheel",
+      "name": "方向盤",
+      "category": "內裝",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "shift-knob",
+      "name": "排檔頭",
+      "category": "內裝",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "roll-bar",
+      "name": "防滾架",
+      "category": "內裝",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "harness",
+      "name": "賽車式安全帶",
+      "category": "內裝",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "sound-deadening",
+      "name": "隔音／靜音材料",
+      "category": "內裝",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "interior-ambient-lights",
+      "name": "室內氣氛燈",
+      "category": "內裝",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "gauges",
+      "name": "附加儀表",
+      "category": "內裝",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "moto-seat",
+      "name": "機車座墊",
+      "category": "內裝",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "grips",
+      "name": "握把",
+      "category": "內裝",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "head-unit",
+      "name": "主機／多媒體螢幕",
+      "category": "音響",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "speakers",
+      "name": "喇叭單體",
+      "category": "音響",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "bluetooth-intercom",
+      "name": "藍牙通訊耳機",
+      "category": "音響",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "clutch",
+      "name": "離合器",
+      "category": "傳動",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "lsd",
+      "name": "限滑差速器／差速鎖",
+      "category": "傳動",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "cvt-kit",
+      "name": "CVT 傳動套件（皮帶、滾輪等）",
+      "category": "傳動",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "sprocket-chain",
+      "name": "前後齒盤與鏈條組",
+      "category": "傳動",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "quickshifter",
+      "name": "快速排檔器（Quickshifter）",
+      "category": "傳動",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "spark-plugs",
+      "name": "火星塞",
+      "category": "引擎強化",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "oil-cooler",
+      "name": "機油冷卻器",
+      "category": "引擎強化",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "engine-oil",
+      "name": "機油",
+      "category": "引擎強化",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "big-bore-kit",
+      "name": "加大缸徑套件",
+      "category": "引擎強化",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "skid-plate",
+      "name": "底盤／引擎護板",
+      "category": "其他",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "roof-rack",
+      "name": "車頂架／行李架",
+      "category": "其他",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "tow-hook",
+      "name": "拖鉤／牽引鉤",
+      "category": "其他",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "winch",
+      "name": "絞盤",
+      "category": "其他",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "bull-bar",
+      "name": "前保桿／防撞桿",
+      "category": "其他",
+      "appliesTo": [
+        "car"
+      ]
+    },
+    {
+      "slotId": "crash-bar",
+      "name": "防摔保桿",
+      "category": "其他",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "hand-guards",
+      "name": "護手",
+      "category": "其他",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "handlebars",
+      "name": "把手／車把",
+      "category": "其他",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "luggage-rack",
+      "name": "後貨架／行李箱支架",
+      "category": "其他",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "phone-mount",
+      "name": "手機架",
+      "category": "其他",
+      "appliesTo": [
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "horn",
+      "name": "喇叭（警示器）",
+      "category": "其他",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    },
+    {
+      "slotId": "dash-cam",
+      "name": "行車記錄器",
+      "category": "其他",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,961 @@
+{
+  "version": "1.0.0",
+  "disclaimer": "本檔內容僅為整理自公開法規與政府說明的提醒，不構成法律意見，亦非合法或不合法的保證；實際請以車輛規格、當地監理單位與合格廠商確認為準。法規可能修正，請以全國法規資料庫等官方最新版本為準。",
+  "legalEnum": {
+    "ok": "一般情況下未查到特別限制（仍非保證）",
+    "risky": "法規有明確條件、限制或登記檢驗要求，容易因規格或施工方式不合而出問題",
+    "confirm": "未查到明確規定或內容不確定，需向合格廠商或監理單位確認"
+  },
+  "lookup": "以 (slotId, vehicleType) 先找精確比對，找不到再找 vehicleType = \"both\"。",
+  "notes": [
+    {
+      "slotId": "air-filter",
+      "vehicleType": "both",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "intake-kit",
+      "vehicleType": "car",
+      "legal": "confirm",
+      "legalNote": "進氣套件未查到明確規定；若連帶影響排氣或噪音表現，仍須符合相關管制。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "未查到直接條文",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "exhaust-header",
+      "vehicleType": "both",
+      "legal": "confirm",
+      "legalNote": "排氣歧管不在環境部替換用排氣管認證範圍內（認證定義不含歧管、觸媒），但仍需符合噪音與空污規定，是否涉及登記不明確。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "環境部「機動車輛替換用消音系統認證管理規範」第二點定義；空氣污染防制法第37條",
+      "source": "https://oaout.moenv.gov.tw/law/LawContent.aspx?id=GL007897",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=37&pcode=O0020001"
+      ]
+    },
+    {
+      "slotId": "downpipe",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "下導管常連動觸媒與排氣系統：觸媒屬列管空氣污染防制設備，法規規定不得拆除或改裝非經認證設備；規則並將汽車渦輪增壓系統列為不得變更項目，可能牽涉其中。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "空氣污染防制法第37條；移動污染源空氣污染防制設備管理辦法第2條；道路交通安全規則第23-1條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=37&pcode=O0020001",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=O0020025",
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "high-flow-cat",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "觸媒轉化器屬列管空氣污染防制設備，使用人不得拆除或改裝非經中央主管機關認證的設備，更換時亦應更換核准的設備。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "空氣污染防制法第37條；移動污染源空氣污染防制設備管理辦法第2、5條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=37&pcode=O0020001",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=O0020025"
+      ]
+    },
+    {
+      "slotId": "exhaust-catback",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "改裝排氣管請留意：尾端出口應位於車輛後方、不得突出車身兩側、最低點離地不少於十公分（列為檢驗項目）；使用中車輛噪音超標可能被通知到檢並處罰。是否需另行認證或登記請向監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五（汽車設備變更，排氣管）；噪音管制法第11、25條；道路交通管理處罰條例第16條",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=O0030001",
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=16&pcode=K0040012",
+        "https://noisecar.moenv.gov.tw/CarSilencer/Downloads/%E6%A9%9F%E5%8B%95%E8%BB%8A%E8%BC%9B%E5%99%AA%E9%9F%B3%E7%AE%A1%E5%88%B6%E6%A8%99%E6%BA%96.pdf"
+      ]
+    },
+    {
+      "slotId": "exhaust-slip-on",
+      "vehicleType": "motorcycle",
+      "legal": "risky",
+      "legalNote": "自114年1月1日起，更換非原型式排氣管須使用經環境部噪音管制認證且對應該機車型式的排氣管，並經合法業者辦理、繳驗統一發票、監理機關檢驗合格後辦理變更登記；另需有隔熱防護、尾管出口位於後方且角度符合規定，排氣管數量與左右側位置不得變更。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五（機車排氣管）；第23-1條；環境部替換用消音系統認證管理規範；處罰條例第16條",
+      "source": "https://168.motc.gov.tw/theme/news/post/2503271551401",
+      "sourceMore": [
+        "https://laws.gov.taipei/law/File/0000403808",
+        "https://oaout.moenv.gov.tw/law/LawContent.aspx?id=GL007897",
+        "https://noisecar.moenv.gov.tw/CarSilencer/Home/QA",
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=16&pcode=K0040012"
+      ]
+    },
+    {
+      "slotId": "exhaust-full-system",
+      "vehicleType": "motorcycle",
+      "legal": "risky",
+      "legalNote": "機車排氣管變更須留意認證、由合法業者辦理、取得統一發票、通過檢驗並辦理變更登記；全段排氣若涉及取代或移除觸媒，另須留意空污法關於不得拆除或改裝未經認證污染防制設備的規定。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五（機車排氣管）；空氣污染防制法第37條",
+      "source": "https://168.motc.gov.tw/theme/news/post/2503271551401",
+      "sourceMore": [
+        "https://laws.gov.taipei/law/File/0000403808",
+        "https://oaout.moenv.gov.tw/law/LawContent.aspx?id=GL007897",
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=37&pcode=O0020001",
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "coilovers",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "避震器變更須由合法業者辦理、繳驗統一發票並經監理機關檢驗合格後辦理變更登記，且變更後不得超過原核定車身高度；懸吊的支臂、三角架與連桿機構屬不得變更項目。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五（底盤：懸吊系統之避震器）；第23-1條",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+        "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "lowering-springs",
+      "vehicleType": "car",
+      "legal": "confirm",
+      "legalNote": "彈簧是否與避震器適用相同登記規定，未查到明確說明；降低車高仍可能與『變更後不得超過原核定車身高度』及輪胎外露限制有關。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五；第38條",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=38&pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "shock-absorbers",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "避震器變更須由合法業者辦理、繳驗統一發票並經監理機關檢驗合格後辦理變更登記，且變更後不得超過原核定車身高度。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五（底盤：懸吊系統之避震器）",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "shock-absorbers",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "機車避震未查到與汽車相同的明確登記規定。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "未查到直接條文",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "sway-bars",
+      "vehicleType": "car",
+      "legal": "confirm",
+      "legalNote": "懸吊系統中的支臂、三角架與連桿機構不得變更；防傾桿是否屬於此範圍未查到明確說明。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23-1條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "alignment",
+      "vehicleType": "car",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "air-suspension",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "氣壓避震屬懸吊系統設備，請留意避震器變更的檢驗與登記規定、變更後不得超過原核定車身高度；可調車高的系統，登記時與實際行駛時的車高都應留意。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五；第23-1條",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "offroad-lift-kit",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "升高車身可能與『避震器變更後不得超過原核定車身高度』衝突；懸吊支臂、三角架與連桿機構不得變更；輪胎尺寸、車身尺度變更另須辦理登記並檢驗。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五；第23、23-1、38條",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+        "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013",
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=38&pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "fork-springs-cartridge",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "機車前叉未查到明確登記規定。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "未查到直接條文",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "steering-damper",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "方向阻尼器未查到明確規定，安裝位置不應影響操控與其他設備。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "未查到直接條文",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "brake-pads",
+      "vehicleType": "both",
+      "legal": "ok",
+      "legalNote": "更換後仍須通過檢驗時的煞車效能與平衡度。",
+      "basis": "道路交通安全規則第39條、第39-1條",
+      "source": "",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "brake-rotors",
+      "vehicleType": "both",
+      "legal": "ok",
+      "legalNote": "更換後仍須通過檢驗時的煞車效能與平衡度。",
+      "basis": "道路交通安全規則第39條、第39-1條",
+      "source": "",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "brake-fluid",
+      "vehicleType": "both",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "brake-lines",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "汽車煞車作用設備（總泵、分泵及油管）與防滑煞車系統屬不得變更項目，更換油管前請先確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23-1條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "brake-lines",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "機車不得變更項目未列煞車設備，但仍須符合檢驗。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23-1條（機車項目）",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "brake-calipers",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "汽車煞車作用設備（含總泵、分泵、油管）屬不得變更項目，大卡鉗套件可能牽涉分泵變更，請先確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23-1條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "brake-calipers",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "機車不得變更項目未列煞車設備，但仍須符合檢驗。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23-1條（機車項目）",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "wheels",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "輪胎尺寸如有變更須辦理變更登記並檢驗合格；汽車全寬不得超過2.5公尺，後輪胎外緣與車身內緣距離，小型車不得超過10公分，請留意輪圈寬度與offset。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23條、第38條",
+      "source": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=38&pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "wheels",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "機車輪胎輪圈尺寸變更的登記規定未查到明確條文；機車全寬亦有上限（規則第38條）。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第38條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=38&pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "tires",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "輪胎尺寸如有變更須辦理變更登記並檢驗合格；外徑與寬度變動也可能使車速表誤差與輪胎外露。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23條、第38條",
+      "source": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=38&pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "tires",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "機車換輪胎尺寸的登記規定未查到明確條文。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "未查到直接條文",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "all-terrain-tires",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "輪胎尺寸如有變更須辦理變更登記並檢驗合格；大尺寸越野胎也可能造成輪胎外露或影響車身間隙。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23條、第38條",
+      "source": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=38&pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "all-terrain-tires",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "機車換越野胎尺寸的登記規定未查到明確條文。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "未查到直接條文",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "wheel-spacers",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "墊寬會改變輪胎外緣位置；規則對汽車全寬（不得超過2.5公尺）與後輪胎外緣至車身內緣距離（小型車不得超過10公分）有限制。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第38條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=38&pcode=K0040013",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "tpms",
+      "vehicleType": "both",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "ecu-tune",
+      "vehicleType": "both",
+      "legal": "confirm",
+      "legalNote": "電子控制單元、含氧感知器與車上診斷系統屬列管空氣污染防制設備，規定不得改裝非經認證的設備；調校是否構成改裝、是否影響排氣與噪音檢驗不明確。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "移動污染源空氣污染防制設備管理辦法第2條；空氣污染防制法第37條",
+      "source": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=O0020025",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=37&pcode=O0020001",
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "front-lip",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "空力套件（含裙部、擾流板、尾翼）列為檢驗項目：不得突出車身兩側及前、後方致影響行車安全、不得有銳利邊角、不得阻礙駕駛視線；檢驗時車輛尺度須與紀錄相符。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五第四點（空力套件）；第39條",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "side-skirts",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "空力套件（含裙部、擾流板、尾翼）列為檢驗項目：不得突出車身兩側及前、後方致影響行車安全、不得有銳利邊角、不得阻礙駕駛視線；檢驗時車輛尺度須與紀錄相符。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五第四點（空力套件）；第39條",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "rear-diffuser",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "空力套件（含裙部、擾流板、尾翼）列為檢驗項目：不得突出車身兩側及前、後方致影響行車安全、不得有銳利邊角、不得阻礙駕駛視線；檢驗時車輛尺度須與紀錄相符。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五第四點（空力套件）；第39條",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "rear-wing",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "空力套件（含裙部、擾流板、尾翼）列為檢驗項目：不得突出車身兩側及前、後方致影響行車安全、不得有銳利邊角、不得阻礙駕駛視線；檢驗時車輛尺度須與紀錄相符。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五第四點（空力套件）；第39條",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "fender-flares",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "車身式樣、車身變更須向監理機關辦理登記並檢驗合格；汽車全寬不得超過2.5公尺，檢驗時尺度須與紀錄相符。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23條、第38條、第39條",
+      "source": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=38&pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "body-wrap",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "車身顏色變更須向監理機關辦理登記並檢驗合格，檢驗時顏色須與紀錄相符；車身顏色另有規範（第42條）；車燈不得噴色或貼膠紙。局部貼紙是否需登記請另行確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23條、第39條、第23-1條",
+      "source": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "body-wrap",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "規則第23條以汽車為規範對象，機車車身顏色變更的登記規定未查到明確條文；車燈不得噴色或貼膠紙。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23-1條（機車項目）",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "window-tint",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "車窗、擋風玻璃不得黏貼不透明反光紙；115年2月28日起新登檢領照且有黏貼隔熱紙的車輛，前擋風玻璃須使用可見光透過率70%以上、前側窗40%以上並有合格標識的隔熱紙（細節以條文為準）。既有車輛適用情形請確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第39條第九款、第39-1條",
+      "source": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "license-plate-frame",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "汽車號牌不得加裝邊框（因電子收費需要、未遮蔽字號與圖案者除外）、不得以他物遮蔽或使不能辨認牌號；違者可能依處罰條例處罰並責令改正。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第11條；道路交通管理處罰條例第13條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=11&pcode=K0040013",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=13&pcode=K0040012"
+      ]
+    },
+    {
+      "slotId": "license-plate-frame",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "機車號牌同樣不宜遮蔽或使不能辨認；邊框是否被允許，查證到的條文以汽車號牌為主。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第11條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=11&pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "mirrors",
+      "vehicleType": "car",
+      "legal": "ok",
+      "legalNote": "含視野輔助燈的後視鏡須符合規定，並與頭燈及倒車燈連動，且不影響駕駛視線。",
+      "basis": "道路交通安全規則附件十五第四點（含視野輔助燈之照後鏡）",
+      "source": "",
+      "sourceMore": [
+        "https://laws.gov.taipei/law/File/0000403808"
+      ]
+    },
+    {
+      "slotId": "mirrors",
+      "vehicleType": "motorcycle",
+      "legal": "ok",
+      "legalNote": "機車照後鏡應與車身主要結構連接並安裝牢固，不得影響駕駛人視角。",
+      "basis": "道路交通安全規則附件十五（機車照後鏡）",
+      "source": "",
+      "sourceMore": [
+        "https://laws.gov.taipei/law/File/0000403808"
+      ]
+    },
+    {
+      "slotId": "fairing-body",
+      "vehicleType": "motorcycle",
+      "legal": "risky",
+      "legalNote": "機車車身外殼僅在原廠或代理商宣告該車型外殼已停產時，可更換同廠牌同型式系列外殼（列為臨時檢驗項目）。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五（機車車身外殼）",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": []
+    },
+    {
+      "slotId": "windscreen",
+      "vehicleType": "motorcycle",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "tail-tidy",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "機車號牌應懸掛於車輛後端明顯適當位置，且不得使不能辨認牌號；短牌架改變位置或角度時請先確認。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第11條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=11&pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "headlights",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "變更氣體放電式、LED 等非鹵素頭燈，須由車廠出具改裝證明、使用經車輛型式安全審驗合格的燈具（泡），近光燈須具自動調整垂直傾角裝置（總目標發光量低於2000流明者除外），並經監理機關依光型檢驗合格後辦理變更登記；燈色限白色或淡黃色且左右一致；車燈不得噴色或貼膠紙。擅自改裝可能被處罰。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五（頭燈）；第39-1條；附件七；第23-1條；處罰條例第18條（依警政署說明）",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": [
+        "https://168.motc.gov.tw/theme/car/post/1906121102292",
+        "https://www.npa.gov.tw/ch/app/faq/view?id=2144&module=faq&serno=A1078865",
+        "https://www.laws.taipei.gov.tw/Law/File/0000222123",
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "headlights",
+      "vehicleType": "motorcycle",
+      "legal": "risky",
+      "legalNote": "變更氣體放電式、LED 等非鹵素頭燈，須經機車車廠出具改裝證明、使用經車輛型式安全審驗合格的燈具（泡），並經監理機關依光型檢驗合格後辦理變更登記；燈色限白色或淡黃色且左右一致；車燈不得噴色或貼膠紙。擅自改裝可能被處罰。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五（機車頭燈）；附件七；第23-1條",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": [
+        "https://168.motc.gov.tw/theme/car/post/1906121102292",
+        "https://www.npa.gov.tw/ch/app/faq/view?id=2144&module=faq&serno=A1078865",
+        "https://www.laws.taipei.gov.tw/Law/File/0000222123",
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "headlight-bulbs",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "改用 HID／LED 燈泡屬頭燈變更：須使用檢測合格的燈具（泡）、通過近光光型檢驗並辦理變更登記，擅自改裝可能被處罰；燈色限白色或淡黃色。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五（頭燈）；附件七；處罰條例第18條（依警政署說明）",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": [
+        "https://168.motc.gov.tw/theme/car/post/1906121102292",
+        "https://www.npa.gov.tw/ch/app/faq/view?id=2144&module=faq&serno=A1078865",
+        "https://www.laws.taipei.gov.tw/Law/File/0000222123"
+      ]
+    },
+    {
+      "slotId": "headlight-bulbs",
+      "vehicleType": "motorcycle",
+      "legal": "risky",
+      "legalNote": "改用 HID／LED 燈泡屬頭燈變更：須使用檢測合格的燈具（泡）、通過近光光型檢驗並辦理變更登記，擅自改裝可能被處罰；燈色限白色或淡黃色。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五（機車頭燈）；附件七",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": [
+        "https://168.motc.gov.tw/theme/car/post/1906121102292",
+        "https://www.npa.gov.tw/ch/app/faq/view?id=2144&module=faq&serno=A1078865",
+        "https://www.laws.taipei.gov.tw/Law/File/0000222123"
+      ]
+    },
+    {
+      "slotId": "fog-lights",
+      "vehicleType": "both",
+      "legal": "confirm",
+      "legalNote": "霧燈的安裝位置、燈色與亮度規定未完整查證；加裝其他車燈時請注意汽車『車身外附加燈飾』屬不得變更項目。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23-1條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "tail-lights",
+      "vehicleType": "both",
+      "legal": "risky",
+      "legalNote": "尾燈燈色應為紅色、煞車燈為紅色且亮度應較尾燈明亮；車燈不得噴色或貼膠紙；燈光被遮蔽致影響辨識也可能受罰。換造型尾燈請確認燈色、位置與亮度符合原規格。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23-1條；附件七；道路交通管理處罰條例第16條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+      "sourceMore": [
+        "https://www.laws.taipei.gov.tw/Law/File/0000222123",
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=16&pcode=K0040012"
+      ]
+    },
+    {
+      "slotId": "turn-signals",
+      "vehicleType": "both",
+      "legal": "risky",
+      "legalNote": "方向燈燈色應為橙色或黃色（鄰近淡黃色頭燈者限用橙色，車後可為紅色），閃爍頻率每分鐘60至120次；LED 替換後請確認燈色與閃爍頻率。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件七；第23-1條",
+      "source": "https://www.laws.taipei.gov.tw/Law/File/0000222123",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "daytime-running-lights",
+      "vehicleType": "both",
+      "legal": "confirm",
+      "legalNote": "加裝式日行燈屬加裝車燈：汽車『車身外附加燈飾』屬不得變更項目，燈色與位置亦須符合燈光檢驗規定。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23-1條；附件七",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+      "sourceMore": [
+        "https://www.laws.taipei.gov.tw/Law/File/0000222123"
+      ]
+    },
+    {
+      "slotId": "auxiliary-lights",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "加裝輔助燈／工作燈屬車身外附加燈飾，規則將其列為汽車不得變更項目；建議僅在非公共道路場地使用，並先向監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23-1條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=16&pcode=K0040012"
+      ]
+    },
+    {
+      "slotId": "auxiliary-lights",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "機車加裝輔助燈未查到明確規定，燈色、位置與亮度仍須符合燈光檢驗規定，建議僅在適當場地使用。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件七",
+      "source": "https://www.laws.taipei.gov.tw/Law/File/0000222123",
+      "sourceMore": []
+    },
+    {
+      "slotId": "seats",
+      "vehicleType": "car",
+      "legal": "confirm",
+      "legalNote": "座位設備如有變更須向監理機關辦理登記；更換座椅是否算變更、與安全帶及安全氣囊的配合情形不明確。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23條",
+      "source": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "steering-wheel",
+      "vehicleType": "car",
+      "legal": "confirm",
+      "legalNote": "方向盤位置不得變更；更換方向盤涉及安全氣囊與喇叭功能，是否影響檢驗不明確。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23-1條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "shift-knob",
+      "vehicleType": "car",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "roll-bar",
+      "vehicleType": "car",
+      "legal": "confirm",
+      "legalNote": "車架、車身變更須辦理登記並檢驗；防滾架是否屬於車身變更、是否影響座位與車內空間不明確。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23條",
+      "source": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "harness",
+      "vehicleType": "car",
+      "legal": "confirm",
+      "legalNote": "規則要求各類車前排及小客車全部座位應裝置安全帶；改用賽車式安全帶是否符合檢驗不明確。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第39條第十一款",
+      "source": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "sound-deadening",
+      "vehicleType": "car",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "interior-ambient-lights",
+      "vehicleType": "car",
+      "legal": "ok",
+      "legalNote": "僅限車內使用，避免光線反射干擾駕駛視線。",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "gauges",
+      "vehicleType": "both",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "moto-seat",
+      "vehicleType": "motorcycle",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "grips",
+      "vehicleType": "motorcycle",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "head-unit",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "駕駛人使用的娛樂性顯示設備，應與駐煞車或變速箱檔位連動，駐煞車未使用或在前進、後退檔位時不得顯示。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五第四點（娛樂性顯示設備）",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": []
+    },
+    {
+      "slotId": "speakers",
+      "vehicleType": "car",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "bluetooth-intercom",
+      "vehicleType": "motorcycle",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "clutch",
+      "vehicleType": "car",
+      "legal": "confirm",
+      "legalNote": "傳動系統設備（排檔型式、驅動方式、變速箱及齒輪箱）不得變更；離合器未明列，但強化離合器是否影響檢驗需確認。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23-1條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "clutch",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "機車離合器未查到明確規定。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "未查到直接條文",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "lsd",
+      "vehicleType": "car",
+      "legal": "confirm",
+      "legalNote": "變速箱及齒輪箱屬傳動系統不得變更項目；差速器是否屬於此範圍未查到明確說明。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23-1條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "cvt-kit",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "CVT 傳動套件可能影響噪音與車速表，未查到明確登記規定。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "未查到直接條文",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "sprocket-chain",
+      "vehicleType": "motorcycle",
+      "legal": "ok",
+      "legalNote": "更換齒比後車速表可能出現誤差，請留意。",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "quickshifter",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "快排未查到明確規定。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "未查到直接條文",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "spark-plugs",
+      "vehicleType": "both",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "oil-cooler",
+      "vehicleType": "car",
+      "legal": "ok",
+      "legalNote": "安裝位置請避免遮擋號牌與燈光，不要突出車身。",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "engine-oil",
+      "vehicleType": "both",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "big-bore-kit",
+      "vehicleType": "motorcycle",
+      "legal": "risky",
+      "legalNote": "機車『引擎設備（機械或渦輪增壓系統）』屬不得變更項目；加大缸徑會改變排氣量等規格，請務必先確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第23-1條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+      "sourceMore": [
+        "https://noisecar.moenv.gov.tw/CarSilencer/Downloads/%E6%A9%9F%E5%8B%95%E8%BB%8A%E8%BC%9B%E5%99%AA%E9%9F%B3%E7%AE%A1%E5%88%B6%E6%A8%99%E6%BA%96.pdf"
+      ]
+    },
+    {
+      "slotId": "skid-plate",
+      "vehicleType": "both",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "roof-rack",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "小型汽車固定式置放架須通過車輛專業機構審驗（置放架靜態強度）、繳驗統一發票並經檢驗登記；不得遮蔽號牌及燈光、不得突出車身兩側，裝於後方長度亦有限制。可拆式是否適用請確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五第一點（小型汽車固定式置放架）",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "tow-hook",
+      "vehicleType": "car",
+      "legal": "confirm",
+      "legalNote": "車用牽引鉤的安裝與檢驗規定未查到明確條文；附掛拖車設備另有規定。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五（附掛拖車設備）",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": []
+    },
+    {
+      "slotId": "winch",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "絞盤須經合法業者辦理、繳驗統一發票並經監理機關檢驗合格後辦理變更登記，且應與底盤大樑或主要結構牢固連接。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五第三點（絞盤）",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": []
+    },
+    {
+      "slotId": "bull-bar",
+      "vehicleType": "car",
+      "legal": "risky",
+      "legalNote": "附件十五對『防撞桿』有規定（須車廠安裝證明、檢驗合格登記，不得遮蔽號牌及燈光、不得突出車身兩側，前後延伸長度有限制）；是否適用於一般車款的前保桿請確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五第二點（防撞桿）",
+      "source": "https://laws.gov.taipei/law/File/0000403808",
+      "sourceMore": []
+    },
+    {
+      "slotId": "crash-bar",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "防摔保桿未查到明確規定，安裝後仍須符合車寬與燈光、號牌不被遮蔽等要求。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第38條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=38&pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "hand-guards",
+      "vehicleType": "motorcycle",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "handlebars",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "機車全寬有上限（大型重型、普通重型及普通輕型機車不得超過1.3公尺，小型輕型機車不得超過1公尺）；換把手請確認寬度與管線。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第38條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=38&pcode=K0040013",
+      "sourceMore": []
+    },
+    {
+      "slotId": "luggage-rack",
+      "vehicleType": "motorcycle",
+      "legal": "confirm",
+      "legalNote": "加裝貨架或箱體後仍須符合機車尺度限制，並不得遮蔽燈光與號牌。需向合格廠商或監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第38條、第11條",
+      "source": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=38&pcode=K0040013",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=11&pcode=K0040013"
+      ]
+    },
+    {
+      "slotId": "phone-mount",
+      "vehicleType": "motorcycle",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    },
+    {
+      "slotId": "horn",
+      "vehicleType": "both",
+      "legal": "risky",
+      "legalNote": "各種喇叭應合於規定且不得裝設可發出不同音調的喇叭；裝置高音量或發出不合規定音調的喇叭或其他產生噪音器物，可能受罰並被沒入。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則第39條、第39-1條；道路交通管理處罰條例第16條",
+      "source": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013",
+      "sourceMore": [
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=16&pcode=K0040012"
+      ]
+    },
+    {
+      "slotId": "dash-cam",
+      "vehicleType": "both",
+      "legal": "ok",
+      "legalNote": "",
+      "basis": "",
+      "source": "",
+      "sourceMore": []
+    }
+  ]
+}

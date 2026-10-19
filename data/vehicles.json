@@ -1,0 +1,702 @@
+{
+  "vehicles": [
+    {
+      "id": "toyota-altis",
+      "type": "car",
+      "make": "豐田 Toyota",
+      "makeZh": "豐田",
+      "makeEn": "Toyota",
+      "model": "Corolla Altis（卡羅拉 Altis）",
+      "generations": [
+        {
+          "name": "E140/E150",
+          "yearFrom": 2006,
+          "yearTo": 2013,
+          "uncertain": true,
+          "note": "國際版 Altis 世代首發年份；台灣上市年份未逐一確認"
+        },
+        {
+          "name": "E170",
+          "yearFrom": 2013,
+          "yearTo": 2018,
+          "note": "維基：Altis 版 2014 年初在東南亞/台灣等市場上市，故 yearFrom 取 2013 發表年；台灣車輛多為 2014 起"
+        },
+        {
+          "name": "E210",
+          "yearFrom": 2018,
+          "yearTo": 2026,
+          "ongoing": true,
+          "note": "維基：E210 Prestige 版於台灣以 Corolla Altis 販售（引用 2019 年報導）；台灣車輛多為 2019 起"
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Toyota_Corolla",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "toyota-yaris",
+      "type": "car",
+      "make": "豐田 Toyota",
+      "makeZh": "豐田",
+      "makeEn": "Toyota",
+      "model": "Yaris",
+      "generations": [
+        {
+          "name": "XP130/XP150",
+          "yearFrom": 2011,
+          "yearTo": 2020,
+          "uncertain": true,
+          "note": "維基標題：XP130 為 2011、XP150 為 2013；台灣所售世代與年份未確認"
+        },
+        {
+          "name": "XP210",
+          "yearFrom": 2020,
+          "yearTo": 2026,
+          "ongoing": true,
+          "uncertain": true,
+          "note": "全球 XP210 為 2020 發表；台灣是否販售該世代未確認"
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Toyota_Yaris",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "toyota-vios",
+      "type": "car",
+      "make": "豐田 Toyota",
+      "makeZh": "豐田",
+      "makeEn": "Toyota",
+      "model": "Vios",
+      "generations": [
+        {
+          "name": "XP90",
+          "yearFrom": 2007,
+          "yearTo": 2013,
+          "note": "維基：台灣版 Vios 自 2002/2003 起販售"
+        },
+        {
+          "name": "XP150",
+          "yearFrom": 2013,
+          "yearTo": 2022
+        },
+        {
+          "name": "AC100",
+          "yearFrom": 2022,
+          "yearTo": 2026,
+          "ongoing": true,
+          "uncertain": true,
+          "note": "台灣導入年份未確認"
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Toyota_Vios",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "toyota-corolla-cross",
+      "type": "car",
+      "make": "豐田 Toyota",
+      "makeZh": "豐田",
+      "makeEn": "Toyota",
+      "model": "Corolla Cross",
+      "generations": [
+        {
+          "name": "第一代",
+          "yearFrom": 2020,
+          "yearTo": 2026,
+          "ongoing": true,
+          "note": "維基：2020 年 7 月於泰國首發，台灣同年導入"
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Toyota_Corolla_Cross",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "toyota-rav4",
+      "type": "car",
+      "make": "豐田 Toyota",
+      "makeZh": "豐田",
+      "makeEn": "Toyota",
+      "model": "RAV4",
+      "generations": [
+        {
+          "name": "XA30",
+          "yearFrom": 2005,
+          "yearTo": 2012
+        },
+        {
+          "name": "XA40",
+          "yearFrom": 2012,
+          "yearTo": 2018
+        },
+        {
+          "name": "XA50",
+          "yearFrom": 2018,
+          "yearTo": 2025
+        },
+        {
+          "name": "XA60",
+          "yearFrom": 2025,
+          "yearTo": 2026,
+          "ongoing": true,
+          "uncertain": true,
+          "note": "台灣導入年份未確認"
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Toyota_RAV4",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "honda-civic",
+      "type": "car",
+      "make": "本田 Honda",
+      "makeZh": "本田",
+      "makeEn": "Honda",
+      "model": "Civic",
+      "generations": [
+        {
+          "name": "第八代",
+          "yearFrom": 2005,
+          "yearTo": 2011,
+          "uncertain": true
+        },
+        {
+          "name": "第九代",
+          "yearFrom": 2011,
+          "yearTo": 2015
+        },
+        {
+          "name": "第十代（FC/FK）",
+          "yearFrom": 2015,
+          "yearTo": 2021,
+          "note": "維基標題 Tenth generation (2015)；販售商品頁標示 2016–2021 FC/FK"
+        },
+        {
+          "name": "第十一代",
+          "yearFrom": 2021,
+          "yearTo": 2026,
+          "ongoing": true
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Honda_Civic",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "honda-fit",
+      "type": "car",
+      "make": "本田 Honda",
+      "makeZh": "本田",
+      "makeEn": "Honda",
+      "model": "Fit（Jazz）",
+      "generations": [
+        {
+          "name": "GE/GG",
+          "yearFrom": 2007,
+          "yearTo": 2013
+        },
+        {
+          "name": "GK/GH/GP",
+          "yearFrom": 2013,
+          "yearTo": 2020
+        },
+        {
+          "name": "GR/GS",
+          "yearFrom": 2020,
+          "yearTo": 2026,
+          "ongoing": true,
+          "note": "維基：第四代於 2019 年發表、台灣有售"
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Honda_Fit",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "honda-cr-v",
+      "type": "car",
+      "make": "本田 Honda",
+      "makeZh": "本田",
+      "makeEn": "Honda",
+      "model": "CR-V",
+      "generations": [
+        {
+          "name": "RE",
+          "yearFrom": 2007,
+          "yearTo": 2012
+        },
+        {
+          "name": "RM",
+          "yearFrom": 2012,
+          "yearTo": 2017
+        },
+        {
+          "name": "RW/RT",
+          "yearFrom": 2017,
+          "yearTo": 2023
+        },
+        {
+          "name": "RS",
+          "yearFrom": 2023,
+          "yearTo": 2026,
+          "ongoing": true
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Honda_CR-V",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "nissan-sentra",
+      "type": "car",
+      "make": "日產 Nissan",
+      "makeZh": "日產",
+      "makeEn": "Nissan",
+      "model": "Sentra",
+      "generations": [
+        {
+          "name": "B16",
+          "yearFrom": 2006,
+          "yearTo": 2012,
+          "uncertain": true
+        },
+        {
+          "name": "B17",
+          "yearFrom": 2012,
+          "yearTo": 2019,
+          "uncertain": true,
+          "note": "台灣另有 2018 年小改款（維基有 2018 Taiwanese Sentra facelift 章節）"
+        },
+        {
+          "name": "B18",
+          "yearFrom": 2019,
+          "yearTo": 2026,
+          "ongoing": true,
+          "note": "維基：B18 於台灣生產自 2020 年起"
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Nissan_Sentra",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "nissan-kicks",
+      "type": "car",
+      "make": "日產 Nissan",
+      "makeZh": "日產",
+      "makeEn": "Nissan",
+      "model": "Kicks",
+      "generations": [
+        {
+          "name": "P15/D15",
+          "yearFrom": 2016,
+          "yearTo": 2024,
+          "uncertain": true,
+          "note": "維基：台灣組裝 2019–2023 起；台灣所售世代確切年份未確認"
+        },
+        {
+          "name": "P16",
+          "yearFrom": 2024,
+          "yearTo": 2026,
+          "ongoing": true,
+          "uncertain": true
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Nissan_Kicks",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "mazda-3",
+      "type": "car",
+      "make": "馬自達 Mazda",
+      "makeZh": "馬自達",
+      "makeEn": "Mazda",
+      "model": "Mazda3",
+      "generations": [
+        {
+          "name": "BK",
+          "yearFrom": 2003,
+          "yearTo": 2008
+        },
+        {
+          "name": "BL",
+          "yearFrom": 2008,
+          "yearTo": 2013
+        },
+        {
+          "name": "BM/BN/BY",
+          "yearFrom": 2013,
+          "yearTo": 2019
+        },
+        {
+          "name": "BP",
+          "yearFrom": 2019,
+          "yearTo": 2026,
+          "ongoing": true
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Mazda3",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "mazda-cx-5",
+      "type": "car",
+      "make": "馬自達 Mazda",
+      "makeZh": "馬自達",
+      "makeEn": "Mazda",
+      "model": "CX-5",
+      "generations": [
+        {
+          "name": "KE",
+          "yearFrom": 2012,
+          "yearTo": 2016
+        },
+        {
+          "name": "KF",
+          "yearFrom": 2016,
+          "yearTo": 2025,
+          "note": "維基：第二代於台灣 2017-04-10 上市；2022-02-11 小改款"
+        },
+        {
+          "name": "KM",
+          "yearFrom": 2025,
+          "yearTo": 2026,
+          "ongoing": true,
+          "uncertain": true,
+          "note": "台灣導入年份未確認"
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Mazda_CX-5",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "ford-focus",
+      "type": "car",
+      "make": "福特 Ford",
+      "makeZh": "福特",
+      "makeEn": "Ford",
+      "model": "Focus",
+      "generations": [
+        {
+          "name": "C307/C170",
+          "yearFrom": 2004,
+          "yearTo": 2010,
+          "uncertain": true
+        },
+        {
+          "name": "C346",
+          "yearFrom": 2010,
+          "yearTo": 2018,
+          "uncertain": true
+        },
+        {
+          "name": "C519",
+          "yearFrom": 2018,
+          "yearTo": 2026,
+          "ongoing": true,
+          "uncertain": true,
+          "note": "台灣販售年份與是否已停售未確認"
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Ford_Focus",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "ford-kuga",
+      "type": "car",
+      "make": "福特 Ford",
+      "makeZh": "福特",
+      "makeEn": "Ford",
+      "model": "Kuga",
+      "generations": [
+        {
+          "name": "C394",
+          "yearFrom": 2008,
+          "yearTo": 2012,
+          "uncertain": true
+        },
+        {
+          "name": "C520",
+          "yearFrom": 2012,
+          "yearTo": 2019,
+          "uncertain": true
+        },
+        {
+          "name": "C482",
+          "yearFrom": 2019,
+          "yearTo": 2026,
+          "ongoing": true,
+          "note": "維基：台灣 2020–2026 組裝"
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Ford_Kuga",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "volkswagen-golf",
+      "type": "car",
+      "make": "福斯 Volkswagen",
+      "makeZh": "福斯",
+      "makeEn": "Volkswagen",
+      "model": "Golf",
+      "generations": [
+        {
+          "name": "Mk5（1K）",
+          "yearFrom": 2003,
+          "yearTo": 2008,
+          "uncertain": true
+        },
+        {
+          "name": "Mk6（5K）",
+          "yearFrom": 2008,
+          "yearTo": 2012
+        },
+        {
+          "name": "Mk7（5G）",
+          "yearFrom": 2012,
+          "yearTo": 2019,
+          "note": "維基標題 Mk7 2012；Mk7.5 為 2017 小改款（維基未在標題區分）"
+        },
+        {
+          "name": "Mk8（CD1）",
+          "yearFrom": 2019,
+          "yearTo": 2026,
+          "ongoing": true,
+          "uncertain": true,
+          "note": "台灣導入年份未確認"
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Volkswagen_Golf",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "volkswagen-polo",
+      "type": "car",
+      "make": "福斯 Volkswagen",
+      "makeZh": "福斯",
+      "makeEn": "Volkswagen",
+      "model": "Polo",
+      "generations": [
+        {
+          "name": "6R/6C/61",
+          "yearFrom": 2009,
+          "yearTo": 2017,
+          "uncertain": true
+        },
+        {
+          "name": "AW/BZ",
+          "yearFrom": 2017,
+          "yearTo": 2026,
+          "ongoing": true,
+          "uncertain": true,
+          "note": "台灣販售年份未確認"
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Volkswagen_Polo",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "subaru-wrx",
+      "type": "car",
+      "make": "速霸陸 Subaru",
+      "makeZh": "速霸陸",
+      "makeEn": "Subaru",
+      "model": "WRX",
+      "generations": [
+        {
+          "name": "VA",
+          "yearFrom": 2015,
+          "yearTo": 2021
+        },
+        {
+          "name": "VB",
+          "yearFrom": 2021,
+          "yearTo": 2026,
+          "ongoing": true
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Subaru_WRX",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "subaru-impreza",
+      "type": "car",
+      "make": "速霸陸 Subaru",
+      "makeZh": "速霸陸",
+      "makeEn": "Subaru",
+      "model": "Impreza",
+      "generations": [
+        {
+          "name": "GE/GH/GR/GV",
+          "yearFrom": 2007,
+          "yearTo": 2011
+        },
+        {
+          "name": "GJ/GP",
+          "yearFrom": 2011,
+          "yearTo": 2016
+        },
+        {
+          "name": "GK/GT",
+          "yearFrom": 2016,
+          "yearTo": 2023
+        },
+        {
+          "name": "GU",
+          "yearFrom": 2023,
+          "yearTo": 2026,
+          "ongoing": true
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Subaru_Impreza",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "mini-cooper",
+      "type": "car",
+      "make": "迷你 MINI",
+      "makeZh": "迷你",
+      "makeEn": "MINI",
+      "model": "Cooper（Hatch）",
+      "generations": [
+        {
+          "name": "R56/R57",
+          "yearFrom": 2006,
+          "yearTo": 2013
+        },
+        {
+          "name": "F55/F56/F57",
+          "yearFrom": 2013,
+          "yearTo": 2023
+        },
+        {
+          "name": "J01/F65/F66/F67",
+          "yearFrom": 2023,
+          "yearTo": 2026,
+          "ongoing": true
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Mini_Hatch",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "suzuki-swift",
+      "type": "car",
+      "make": "鈴木 Suzuki",
+      "makeZh": "鈴木",
+      "makeEn": "Suzuki",
+      "model": "Swift",
+      "generations": [
+        {
+          "name": "RS",
+          "yearFrom": 2004,
+          "yearTo": 2010,
+          "note": "維基：台灣由 Prince Motors 2005–2009 組裝"
+        },
+        {
+          "name": "AZG",
+          "yearFrom": 2010,
+          "yearTo": 2016
+        },
+        {
+          "name": "A2L",
+          "yearFrom": 2016,
+          "yearTo": 2023
+        },
+        {
+          "name": "AOL（維基原文拼法）",
+          "yearFrom": 2023,
+          "yearTo": 2026,
+          "ongoing": true
+        }
+      ],
+      "source": "https://en.wikipedia.org/wiki/Suzuki_Swift",
+      "note": "年式依英文維基百科該車款頁世代標題的首次發表年份；yearTo 為下一世代首次發表年份（推估），ongoing=true 表示仍在產（yearTo 填 2026 僅為資料截止年）。台灣實際上市/停售年份可能不同。"
+    },
+    {
+      "id": "yamaha-force",
+      "type": "motorcycle",
+      "make": "山葉 Yamaha",
+      "makeZh": "山葉",
+      "makeEn": "Yamaha",
+      "model": "Force 155 / Force 2.0（FORCE）",
+      "generations": [
+        {
+          "name": "Force 155",
+          "yearFrom": 2016,
+          "yearTo": 2021,
+          "uncertain": true,
+          "note": "U-CAR：2016-10-04 發表、10-17 開賣；yearTo 取 Force 2.0 於 2021 年 10 月發表，實際停產日未確認"
+        },
+        {
+          "name": "Force 2.0",
+          "yearFrom": 2021,
+          "yearTo": 2026,
+          "ongoing": true,
+          "note": "U-CAR/山葉研發台灣新聞：2021-10-13 發表"
+        }
+      ],
+      "source": "https://motor.u-car.com.tw/motor/article/32195",
+      "sources": [
+        "https://motor.u-car.com.tw/motor/article/32195",
+        "https://motor.u-car.com.tw/motor/article/68158"
+      ],
+      "note": "機車年式依台灣上市/發表新聞報導的日期；yearTo 推估自下一世代發表年。"
+    },
+    {
+      "id": "yamaha-cygnus",
+      "type": "motorcycle",
+      "make": "山葉 Yamaha",
+      "makeZh": "山葉",
+      "makeEn": "Yamaha",
+      "model": "勁戰 Cygnus（第六代 Cygnus Gryphus）",
+      "generations": [
+        {
+          "name": "Cygnus Gryphus（第六代）",
+          "yearFrom": 2020,
+          "yearTo": 2026,
+          "ongoing": true,
+          "note": "U-CAR：2020-07-21 發表、07-24 開賣；第一至五代年式未取得可靠來源，故不列"
+        }
+      ],
+      "source": "https://motor.u-car.com.tw/motor/article/62983",
+      "note": "機車年式依台灣上市/發表新聞報導的日期；yearTo 推估自下一世代發表年。"
+    },
+    {
+      "id": "sym-drg",
+      "type": "motorcycle",
+      "make": "三陽 SYM",
+      "makeZh": "三陽",
+      "makeEn": "SYM",
+      "model": "DRG 158",
+      "generations": [
+        {
+          "name": "DRG 158",
+          "yearFrom": 2019,
+          "yearTo": 2026,
+          "ongoing": true,
+          "note": "U-CAR：2019-10-18 台灣正式上市"
+        }
+      ],
+      "source": "https://motor.u-car.com.tw/article/49252",
+      "note": "機車年式依台灣上市/發表新聞報導的日期；yearTo 推估自下一世代發表年。"
+    },
+    {
+      "id": "kymco-krv",
+      "type": "motorcycle",
+      "make": "光陽 Kymco",
+      "makeZh": "光陽",
+      "makeEn": "Kymco",
+      "model": "KRV 180",
+      "generations": [
+        {
+          "name": "KRV 180（皮帶 PTM）",
+          "yearFrom": 2021,
+          "yearTo": 2026,
+          "ongoing": true,
+          "note": "7Car/U-CAR：2020-11-26 發表，2021 年 3 月底首批交車；2022 年另有鏈條版 KRV MOTO"
+        }
+      ],
+      "source": "https://www.7car.tw/articles/read/70779",
+      "sources": [
+        "https://www.7car.tw/articles/read/70779",
+        "https://motor.u-car.com.tw/motor/article/72025"
+      ],
+      "note": "機車年式依台灣上市/發表新聞報導的日期；yearTo 推估自下一世代發表年。"
+    }
+  ]
+}

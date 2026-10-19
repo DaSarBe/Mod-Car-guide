@@ -1,0 +1,1252 @@
+{
+  "version": "1.0.0",
+  "note": "tiers 採『增量』寫法：advanced 只列新增項目並以 includes 指向 starter，extreme 同理；priority 在同一個 theme+vehicleType 內全域唯一，數字越小越優先。詳見 README.md。",
+  "themes": [
+    {
+      "id": "street-sport",
+      "name": "街道運動",
+      "description": "以日常通勤加上假日跑山為前提，提升煞車、抓地與操控的一致性，並保留一定的舒適度與可靠度。",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ],
+      "variants": [
+        {
+          "vehicleType": "car",
+          "note": "以街道使用為主，重點放在煞車、輪胎與懸吊平衡，動力調整放在較後面。",
+          "tiers": {
+            "starter": {
+              "name": "入門",
+              "includes": null,
+              "budgetLevel": 1,
+              "budgetNote": "以耗材與小件為主，單項花費通常較低，多可自行評估後分次施作。",
+              "items": [
+                {
+                  "slotId": "brake-pads",
+                  "defaultReason": "可考慮換成街道運動型來令片，通常能改善抗熱衰退與踏板質感，實際感受依車款與用法而異。",
+                  "priority": 1
+                },
+                {
+                  "slotId": "tires",
+                  "defaultReason": "建議優先挑選抓地力較好的運動／高性能胎，通常是花費相對少、體感明顯的升級。",
+                  "priority": 2
+                },
+                {
+                  "slotId": "brake-fluid",
+                  "defaultReason": "建議換成沸點較高的煞車油並定期更換，有助於連續煞車時維持踏板穩定。",
+                  "priority": 3
+                },
+                {
+                  "slotId": "air-filter",
+                  "defaultReason": "可考慮換成可重複清洗或高流量濾芯，通常成本低，進氣順暢度可能小幅改善。",
+                  "priority": 4
+                }
+              ]
+            },
+            "advanced": {
+              "name": "進階",
+              "includes": "starter",
+              "budgetLevel": 2,
+              "budgetNote": "多為較大件或需專業安裝的項目，總預算通常明顯高於入門。",
+              "items": [
+                {
+                  "slotId": "shock-absorbers",
+                  "defaultReason": "可考慮換成運動調校的替換避震器，通常能減少車身晃動，但舒適度可能略降。",
+                  "priority": 5
+                },
+                {
+                  "slotId": "sway-bars",
+                  "defaultReason": "建議搭配加粗防傾桿，通常能降低過彎側傾，需注意前後平衡以免轉向特性過度改變。",
+                  "priority": 6
+                },
+                {
+                  "slotId": "exhaust-catback",
+                  "defaultReason": "可考慮中後段排氣管，通常能改善排氣順暢度與聲浪，建議選擇音量適中的款式。",
+                  "priority": 7
+                },
+                {
+                  "slotId": "brake-rotors",
+                  "defaultReason": "可考慮劃線或打孔碟盤，通常有助散熱與排水，建議與來令片搭配選用。",
+                  "priority": 8
+                },
+                {
+                  "slotId": "intake-kit",
+                  "defaultReason": "可考慮進氣套件，通常能改善進氣響應與聲音，實際馬力提升依車款而異。",
+                  "priority": 9
+                }
+              ]
+            },
+            "extreme": {
+              "name": "極致",
+              "includes": "advanced",
+              "budgetLevel": 3,
+              "budgetNote": "含高單價、需整體搭配或安裝工時多的項目，總預算通常最高，建議先確認使用場景再投入。",
+              "items": [
+                {
+                  "slotId": "wheels",
+                  "defaultReason": "可考慮輕量化輪圈，通常能降低簧下重量，有助操控與加減速響應，尺寸需注意與車身匹配。",
+                  "priority": 10
+                },
+                {
+                  "slotId": "brake-calipers",
+                  "defaultReason": "若常高強度駕駛，可考慮大卡鉗套件，通常能提升煞車耐熱與可控性，花費與安裝要求較高。",
+                  "priority": 11
+                },
+                {
+                  "slotId": "ecu-tune",
+                  "defaultReason": "可考慮搭配硬體升級的 ECU 調校，通常能讓動力輸出更貼合配件，建議找有經驗的廠商。",
+                  "priority": 12
+                },
+                {
+                  "slotId": "clutch",
+                  "defaultReason": "若動力提升後出現打滑，可考慮強化離合器，通常會使踏板變重，日常使用需評估。",
+                  "priority": 13
+                },
+                {
+                  "slotId": "lsd",
+                  "defaultReason": "可考慮限滑差速器，通常能改善出彎的循跡，但低速轉彎可能有異響或頓挫感。",
+                  "priority": 14
+                }
+              ]
+            }
+          }
+        },
+        {
+          "vehicleType": "motorcycle",
+          "note": "以街道與跑山為主，優先處理輪胎、煞車與傳動，再提升懸吊與排氣。",
+          "tiers": {
+            "starter": {
+              "name": "入門",
+              "includes": null,
+              "budgetLevel": 1,
+              "budgetNote": "以耗材與小件為主，單項花費通常較低，多可自行評估後分次施作。",
+              "items": [
+                {
+                  "slotId": "tires",
+                  "defaultReason": "建議優先換上抓地力較好的運動胎，通常是最直接改善安全與操控的升級。",
+                  "priority": 1
+                },
+                {
+                  "slotId": "brake-pads",
+                  "defaultReason": "可考慮換成運動型來令片，通常能提升咬合力道與耐熱，實際感受依車款而異。",
+                  "priority": 2
+                },
+                {
+                  "slotId": "brake-fluid",
+                  "defaultReason": "建議換成高沸點煞車油並定期更換，有助於連續煞車時維持拉感穩定。",
+                  "priority": 3
+                },
+                {
+                  "slotId": "sprocket-chain",
+                  "defaultReason": "可考慮換成品質較好的齒盤鏈條組，並依需求調整齒比，通常會影響起步力道與極速取向。",
+                  "priority": 4
+                }
+              ]
+            },
+            "advanced": {
+              "name": "進階",
+              "includes": "starter",
+              "budgetLevel": 2,
+              "budgetNote": "多為較大件或需專業安裝的項目，總預算通常明顯高於入門。",
+              "items": [
+                {
+                  "slotId": "shock-absorbers",
+                  "defaultReason": "可考慮換成可調式後避震，通常能依體重與路況調整，提升過彎穩定度。",
+                  "priority": 5
+                },
+                {
+                  "slotId": "brake-lines",
+                  "defaultReason": "可考慮編織煞車油管，通常能讓拉感更直接，需確認適用車款。",
+                  "priority": 6
+                },
+                {
+                  "slotId": "exhaust-slip-on",
+                  "defaultReason": "可考慮尾段排氣管，通常能改善聲浪與重量，建議選擇有環境部認證且對應車型的款式。",
+                  "priority": 7
+                },
+                {
+                  "slotId": "fork-springs-cartridge",
+                  "defaultReason": "可考慮前叉彈簧或油壓套件，通常能改善前輪回饋與煞車點頭，安裝需專業調校。",
+                  "priority": 8
+                }
+              ]
+            },
+            "extreme": {
+              "name": "極致",
+              "includes": "advanced",
+              "budgetLevel": 3,
+              "budgetNote": "含高單價、需整體搭配或安裝工時多的項目，總預算通常最高，建議先確認使用場景再投入。",
+              "items": [
+                {
+                  "slotId": "ecu-tune",
+                  "defaultReason": "在排氣等硬體升級後，可考慮搭配 ECU 調校，通常能讓油氣混合更貼合，建議找熟悉該車款的廠商。",
+                  "priority": 9
+                },
+                {
+                  "slotId": "quickshifter",
+                  "defaultReason": "可考慮快排，通常能在加速時免離合換檔，更適合積極騎乘。",
+                  "priority": 10
+                },
+                {
+                  "slotId": "brake-calipers",
+                  "defaultReason": "可考慮升級卡鉗，通常能改善煞車力道與耐熱，需確認與碟盤、總泵搭配。",
+                  "priority": 11
+                },
+                {
+                  "slotId": "wheels",
+                  "defaultReason": "可考慮輕量化輪框，通常能減輕簧下重量並改善操控響應，費用較高。",
+                  "priority": 12
+                },
+                {
+                  "slotId": "steering-damper",
+                  "defaultReason": "可考慮方向阻尼器，通常有助於抑制高速車頭擺動，需依車款挑選安裝位置。",
+                  "priority": 13
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "track",
+      "name": "賽道",
+      "description": "以封閉賽道或場地練習為目標，優先確保煞車、散熱與車身安全，再逐步提升懸吊與動力。",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ],
+      "variants": [
+        {
+          "vehicleType": "car",
+          "note": "項目以封閉場地使用為前提，上路使用前請對照 legal-notes.json 並向監理單位確認。",
+          "tiers": {
+            "starter": {
+              "name": "入門",
+              "includes": null,
+              "budgetLevel": 1,
+              "budgetNote": "以耗材與小件為主，單項花費通常較低，多可自行評估後分次施作。",
+              "items": [
+                {
+                  "slotId": "brake-pads",
+                  "defaultReason": "建議先換成賽道取向的來令片，通常能提供更穩定的高溫摩擦，但冷車時可能較不咬、粉塵與噪音可能增加。",
+                  "priority": 1
+                },
+                {
+                  "slotId": "brake-fluid",
+                  "defaultReason": "賽道使用建議換成高沸點煞車油，並在賽前確認排氣，通常能降低煞車油沸騰造成的踏板變軟風險。",
+                  "priority": 2
+                },
+                {
+                  "slotId": "tires",
+                  "defaultReason": "建議準備適合賽道的高性能胎，通常能顯著提升抓地力，但磨耗與成本較高。",
+                  "priority": 3
+                },
+                {
+                  "slotId": "engine-oil",
+                  "defaultReason": "建議使用符合高轉速與高油溫需求的機油並縮短更換週期，有助於維持潤滑。",
+                  "priority": 4
+                },
+                {
+                  "slotId": "tpms",
+                  "defaultReason": "可考慮胎壓偵測器，通常能讓您在跑道上掌握胎壓與溫度變化。",
+                  "priority": 5
+                }
+              ]
+            },
+            "advanced": {
+              "name": "進階",
+              "includes": "starter",
+              "budgetLevel": 2,
+              "budgetNote": "多為較大件或需專業安裝的項目，總預算通常明顯高於入門。",
+              "items": [
+                {
+                  "slotId": "brake-rotors",
+                  "defaultReason": "可考慮耐熱碟盤，通常能提升連續煞車的耐久度，建議搭配來令片選用。",
+                  "priority": 6
+                },
+                {
+                  "slotId": "coilovers",
+                  "defaultReason": "可考慮可調式避震，通常能調整車高與阻尼配合賽道，需配合四輪定位。",
+                  "priority": 7
+                },
+                {
+                  "slotId": "sway-bars",
+                  "defaultReason": "可考慮可調防傾桿，通常能微調轉向傾向，需注意前後平衡。",
+                  "priority": 8
+                },
+                {
+                  "slotId": "oil-cooler",
+                  "defaultReason": "可考慮機油冷卻器，通常能在連續高負載下維持油溫，建議注意管路安裝固定。",
+                  "priority": 9
+                },
+                {
+                  "slotId": "alignment",
+                  "defaultReason": "建議依賽道需求做專用四輪定位，通常能改善輪胎接地與磨耗，建議每次調整後留存數據。",
+                  "priority": 10
+                }
+              ]
+            },
+            "extreme": {
+              "name": "極致",
+              "includes": "advanced",
+              "budgetLevel": 3,
+              "budgetNote": "含高單價、需整體搭配或安裝工時多的項目，總預算通常最高，建議先確認使用場景再投入。",
+              "items": [
+                {
+                  "slotId": "seats",
+                  "defaultReason": "可考慮桶椅，通常能在過彎時更好地固定身體，但上下車與日常舒適度會下降。",
+                  "priority": 11
+                },
+                {
+                  "slotId": "harness",
+                  "defaultReason": "搭配桶椅時可考慮賽車式安全帶，通常能更牢固固定身體，需確認有效期限與安裝位置。",
+                  "priority": 12
+                },
+                {
+                  "slotId": "roll-bar",
+                  "defaultReason": "可考慮防滾架，通常能增加車身剛性與安全，但需由專業廠商設計安裝。",
+                  "priority": 13
+                },
+                {
+                  "slotId": "brake-calipers",
+                  "defaultReason": "可考慮大卡鉗與整套煞車升級，通常能顯著提升煞車耐熱與可控性，成本較高。",
+                  "priority": 14
+                },
+                {
+                  "slotId": "rear-wing",
+                  "defaultReason": "可考慮尾翼，通常在較高速度下提供下壓力，但需整體空力搭配才有意義。",
+                  "priority": 15
+                },
+                {
+                  "slotId": "clutch",
+                  "defaultReason": "若動力提升，可考慮強化離合器，通常能降低打滑，但踏板可能變重。",
+                  "priority": 16
+                },
+                {
+                  "slotId": "lsd",
+                  "defaultReason": "可考慮限滑差速器，通常能改善出彎循跡，需依駕駛風格選擇型式。",
+                  "priority": 17
+                },
+                {
+                  "slotId": "ecu-tune",
+                  "defaultReason": "建議在硬體到位後再評估 ECU 調校，通常能改善動力曲線與可靠度，請選擇有經驗的廠商。",
+                  "priority": 18
+                }
+              ]
+            }
+          }
+        },
+        {
+          "vehicleType": "motorcycle",
+          "note": "項目以封閉賽道使用為前提，上路使用前請對照 legal-notes.json 並向監理單位確認。",
+          "tiers": {
+            "starter": {
+              "name": "入門",
+              "includes": null,
+              "budgetLevel": 1,
+              "budgetNote": "以耗材與小件為主，單項花費通常較低，多可自行評估後分次施作。",
+              "items": [
+                {
+                  "slotId": "brake-pads",
+                  "defaultReason": "建議先換賽道取向來令片，通常能提供穩定的高溫制動，但冷車時咬合可能較弱。",
+                  "priority": 1
+                },
+                {
+                  "slotId": "brake-fluid",
+                  "defaultReason": "賽道使用建議換成高沸點煞車油並賽前檢查，通常能降低油沸騰造成拉感變軟的風險。",
+                  "priority": 2
+                },
+                {
+                  "slotId": "tires",
+                  "defaultReason": "建議選擇賽道或運動取向輪胎，並配合暖胎，通常能提升抓地力，耐用度較低。",
+                  "priority": 3
+                },
+                {
+                  "slotId": "engine-oil",
+                  "defaultReason": "建議使用適合高轉速與高油溫的機油並縮短更換週期，有助於維持潤滑。",
+                  "priority": 4
+                }
+              ]
+            },
+            "advanced": {
+              "name": "進階",
+              "includes": "starter",
+              "budgetLevel": 2,
+              "budgetNote": "多為較大件或需專業安裝的項目，總預算通常明顯高於入門。",
+              "items": [
+                {
+                  "slotId": "sprocket-chain",
+                  "defaultReason": "可考慮輕量化齒盤與高強度鏈條，並依賽道調整齒比，通常能改善加速取向。",
+                  "priority": 5
+                },
+                {
+                  "slotId": "brake-lines",
+                  "defaultReason": "可考慮編織煞車油管，通常能讓拉感更直接，需確認適用車款。",
+                  "priority": 6
+                },
+                {
+                  "slotId": "fork-springs-cartridge",
+                  "defaultReason": "可考慮前叉彈簧或油壓套件，通常能改善前輪回饋與煞車穩定，需專業調校。",
+                  "priority": 7
+                },
+                {
+                  "slotId": "shock-absorbers",
+                  "defaultReason": "可考慮高階可調後避震，通常能依賽道調整阻尼與預壓。",
+                  "priority": 8
+                },
+                {
+                  "slotId": "tpms",
+                  "defaultReason": "可考慮胎壓偵測器，通常能讓您掌握跑道上胎壓與溫度變化。",
+                  "priority": 9
+                }
+              ]
+            },
+            "extreme": {
+              "name": "極致",
+              "includes": "advanced",
+              "budgetLevel": 3,
+              "budgetNote": "含高單價、需整體搭配或安裝工時多的項目，總預算通常最高，建議先確認使用場景再投入。",
+              "items": [
+                {
+                  "slotId": "brake-calipers",
+                  "defaultReason": "可考慮升級卡鉗與碟盤，通常能提升煞車耐熱與力道，需確認與總泵搭配。",
+                  "priority": 10
+                },
+                {
+                  "slotId": "steering-damper",
+                  "defaultReason": "可考慮方向阻尼器，通常能抑制高速車頭擺動，需依車款挑選安裝位置。",
+                  "priority": 11
+                },
+                {
+                  "slotId": "quickshifter",
+                  "defaultReason": "可考慮快排，通常能在加速時免離合換檔，圈速穩定度可能提升。",
+                  "priority": 12
+                },
+                {
+                  "slotId": "ecu-tune",
+                  "defaultReason": "可考慮搭配硬體的 ECU 調校，通常能優化油氣與點火，建議找熟悉該車款的廠商。",
+                  "priority": 13
+                },
+                {
+                  "slotId": "wheels",
+                  "defaultReason": "可考慮輕量化輪框，通常能減輕簧下重量，改善操控響應，成本較高。",
+                  "priority": 14
+                },
+                {
+                  "slotId": "clutch",
+                  "defaultReason": "可考慮強化離合器，通常能在重複起步與升降檔時更耐用。",
+                  "priority": 15
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "look",
+      "name": "外觀造型",
+      "description": "以個人風格與視覺質感為主，從低風險的小細節開始，逐步進入輪圈、套件與整體造型。",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ],
+      "variants": [
+        {
+          "vehicleType": "car",
+          "note": "外觀項目請留意尺寸、顏色與燈光相關規定，細節見 legal-notes.json。",
+          "tiers": {
+            "starter": {
+              "name": "入門",
+              "includes": null,
+              "budgetLevel": 1,
+              "budgetNote": "以耗材與小件為主，單項花費通常較低，多可自行評估後分次施作。",
+              "items": [
+                {
+                  "slotId": "window-tint",
+                  "defaultReason": "可考慮隔熱紙，通常能兼顧隱私與車內溫度，請挑選有合格標識的產品並注意透光率。",
+                  "priority": 1
+                },
+                {
+                  "slotId": "interior-ambient-lights",
+                  "defaultReason": "可考慮室內氣氛燈，通常成本低、改變車內氛圍明顯，建議亮度柔和以免干擾駕駛。",
+                  "priority": 2
+                },
+                {
+                  "slotId": "shift-knob",
+                  "defaultReason": "可考慮換排檔頭，通常能改善手感與質感，成本低且可逆。",
+                  "priority": 3
+                }
+              ]
+            },
+            "advanced": {
+              "name": "進階",
+              "includes": "starter",
+              "budgetLevel": 2,
+              "budgetNote": "多為較大件或需專業安裝的項目，總預算通常明顯高於入門。",
+              "items": [
+                {
+                  "slotId": "wheels",
+                  "defaultReason": "輪圈通常是改變外觀最明顯的項目，建議選擇與車身尺寸相符的規格。",
+                  "priority": 4
+                },
+                {
+                  "slotId": "front-lip",
+                  "defaultReason": "可考慮前下巴，通常能強化前保險桿的視覺造型，需注意離地高度與突出幅度。",
+                  "priority": 5
+                },
+                {
+                  "slotId": "tail-lights",
+                  "defaultReason": "可考慮換造型尾燈，通常能讓後車尾更有辨識度，請確認燈色與亮度符合原規格。",
+                  "priority": 6
+                },
+                {
+                  "slotId": "body-wrap",
+                  "defaultReason": "可考慮貼膜或局部改色，通常比烤漆彈性高，整車改色請先確認登記相關規定。",
+                  "priority": 7
+                }
+              ]
+            },
+            "extreme": {
+              "name": "極致",
+              "includes": "advanced",
+              "budgetLevel": 3,
+              "budgetNote": "含高單價、需整體搭配或安裝工時多的項目，總預算通常最高，建議先確認使用場景再投入。",
+              "items": [
+                {
+                  "slotId": "side-skirts",
+                  "defaultReason": "可考慮側裙，通常能讓車身側面線條更完整，需注意離地高度與突出幅度。",
+                  "priority": 8
+                },
+                {
+                  "slotId": "rear-diffuser",
+                  "defaultReason": "可考慮後下巴，通常能強化後保險桿造型，建議挑選與車款貼合的款式。",
+                  "priority": 9
+                },
+                {
+                  "slotId": "rear-wing",
+                  "defaultReason": "可考慮尾翼，通常能增加運動感，建議挑選尺寸與角度適中的款式。",
+                  "priority": 10
+                },
+                {
+                  "slotId": "steering-wheel",
+                  "defaultReason": "可考慮換方向盤，通常能提升握感與內裝質感，需留意安全氣囊與按鍵功能。",
+                  "priority": 11
+                },
+                {
+                  "slotId": "seats",
+                  "defaultReason": "可考慮換座椅，通常能提升包覆感與內裝質感，需留意安全帶與座位相關規定。",
+                  "priority": 12
+                }
+              ]
+            }
+          }
+        },
+        {
+          "vehicleType": "motorcycle",
+          "note": "外觀項目請留意燈光、車牌位置與車身外殼相關規定，細節見 legal-notes.json。",
+          "tiers": {
+            "starter": {
+              "name": "入門",
+              "includes": null,
+              "budgetLevel": 1,
+              "budgetNote": "以耗材與小件為主，單項花費通常較低，多可自行評估後分次施作。",
+              "items": [
+                {
+                  "slotId": "grips",
+                  "defaultReason": "可考慮換握把，通常成本低，並能改善手感與外觀。",
+                  "priority": 1
+                },
+                {
+                  "slotId": "mirrors",
+                  "defaultReason": "可考慮換後視鏡，通常能改善外觀並維持視野，請確認安裝牢固且不影響視角。",
+                  "priority": 2
+                },
+                {
+                  "slotId": "body-wrap",
+                  "defaultReason": "可考慮局部貼膜或造型貼紙，通常成本較低，車燈請勿噴色或貼膠紙。",
+                  "priority": 3
+                }
+              ]
+            },
+            "advanced": {
+              "name": "進階",
+              "includes": "starter",
+              "budgetLevel": 2,
+              "budgetNote": "多為較大件或需專業安裝的項目，總預算通常明顯高於入門。",
+              "items": [
+                {
+                  "slotId": "moto-seat",
+                  "defaultReason": "可考慮換座墊，通常能改善外觀與坐感，需注意座高與腳距。",
+                  "priority": 4
+                },
+                {
+                  "slotId": "turn-signals",
+                  "defaultReason": "可考慮換造型方向燈，通常能提升外觀質感，請確認燈色與閃爍頻率符合規格。",
+                  "priority": 5
+                },
+                {
+                  "slotId": "tail-tidy",
+                  "defaultReason": "可考慮短牌架，通常能讓車尾更俐落，請先確認號牌位置與辨識是否符合規定。",
+                  "priority": 6
+                },
+                {
+                  "slotId": "windscreen",
+                  "defaultReason": "可考慮換風鏡，通常能改變前視覺並提供擋風，需留意高度與視線。",
+                  "priority": 7
+                }
+              ]
+            },
+            "extreme": {
+              "name": "極致",
+              "includes": "advanced",
+              "budgetLevel": 3,
+              "budgetNote": "含高單價、需整體搭配或安裝工時多的項目，總預算通常最高，建議先確認使用場景再投入。",
+              "items": [
+                {
+                  "slotId": "wheels",
+                  "defaultReason": "可考慮換輪框，通常是改變外觀最明顯的項目，尺寸需與車身匹配。",
+                  "priority": 8
+                },
+                {
+                  "slotId": "fairing-body",
+                  "defaultReason": "可考慮更換車殼，通常能大幅改變造型，需先確認是否符合車殼更換相關規定。",
+                  "priority": 9
+                },
+                {
+                  "slotId": "headlights",
+                  "defaultReason": "可考慮造型頭燈，通常能強化車頭辨識度，請選用經審驗合格並符合光型的燈具。",
+                  "priority": 10
+                },
+                {
+                  "slotId": "exhaust-slip-on",
+                  "defaultReason": "可考慮造型排氣尾段，通常能改善外觀與聲浪，建議選擇有環境部認證且對應車型的款式。",
+                  "priority": 11
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "comfort",
+      "name": "舒適靜音",
+      "description": "以降低疲勞、噪音與震動為目標，讓長途與日常通勤都更輕鬆，並以耐用與好維護為優先。",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ],
+      "variants": [
+        {
+          "vehicleType": "car",
+          "note": "以乘坐質感與降噪為主，避免過度運動化的升級。",
+          "tiers": {
+            "starter": {
+              "name": "入門",
+              "includes": null,
+              "budgetLevel": 1,
+              "budgetNote": "以耗材與小件為主，單項花費通常較低，多可自行評估後分次施作。",
+              "items": [
+                {
+                  "slotId": "tires",
+                  "defaultReason": "建議挑選舒適靜音取向輪胎，通常能降低路噪與震動，是性價比較高的起點。",
+                  "priority": 1
+                },
+                {
+                  "slotId": "sound-deadening",
+                  "defaultReason": "可考慮加裝隔音／吸音材料，通常能降低路噪與風切聲，施工量越大花費越高。",
+                  "priority": 2
+                },
+                {
+                  "slotId": "window-tint",
+                  "defaultReason": "可考慮隔熱紙，通常能降低車內溫度與眩光，請挑選有合格標識並注意透光率。",
+                  "priority": 3
+                }
+              ]
+            },
+            "advanced": {
+              "name": "進階",
+              "includes": "starter",
+              "budgetLevel": 2,
+              "budgetNote": "多為較大件或需專業安裝的項目，總預算通常明顯高於入門。",
+              "items": [
+                {
+                  "slotId": "shock-absorbers",
+                  "defaultReason": "可考慮舒適調校的替換避震器，通常能改善過減速丘與顛簸路面的質感。",
+                  "priority": 4
+                },
+                {
+                  "slotId": "alignment",
+                  "defaultReason": "建議老化車輛重新做四輪定位，通常能改善直行穩定與輪胎磨耗。",
+                  "priority": 5
+                },
+                {
+                  "slotId": "speakers",
+                  "defaultReason": "可考慮換喇叭單體，通常能提升音質，搭配隔音材料效果可能更明顯。",
+                  "priority": 6
+                }
+              ]
+            },
+            "extreme": {
+              "name": "極致",
+              "includes": "advanced",
+              "budgetLevel": 3,
+              "budgetNote": "含高單價、需整體搭配或安裝工時多的項目，總預算通常最高，建議先確認使用場景再投入。",
+              "items": [
+                {
+                  "slotId": "seats",
+                  "defaultReason": "可考慮更換更包覆舒適的座椅，通常有助於長途減少疲勞，需留意安全帶與座位相關規定。",
+                  "priority": 7
+                },
+                {
+                  "slotId": "head-unit",
+                  "defaultReason": "可考慮換主機提升導航與音質，建議確認行駛中顯示限制與原車功能整合。",
+                  "priority": 8
+                },
+                {
+                  "slotId": "steering-wheel",
+                  "defaultReason": "可考慮換握感更好的方向盤，通常能減少長時間握持疲勞，需留意安全氣囊與按鍵功能。",
+                  "priority": 9
+                }
+              ]
+            }
+          }
+        },
+        {
+          "vehicleType": "motorcycle",
+          "note": "以長途騎乘與通勤舒適為主。",
+          "tiers": {
+            "starter": {
+              "name": "入門",
+              "includes": null,
+              "budgetLevel": 1,
+              "budgetNote": "以耗材與小件為主，單項花費通常較低，多可自行評估後分次施作。",
+              "items": [
+                {
+                  "slotId": "grips",
+                  "defaultReason": "可考慮換成較軟或帶減震的握把，通常能減少手麻與疲勞。",
+                  "priority": 1
+                },
+                {
+                  "slotId": "phone-mount",
+                  "defaultReason": "可考慮穩固的手機架，通常能提升導航便利，建議挑選有防震設計的款式。",
+                  "priority": 2
+                },
+                {
+                  "slotId": "windscreen",
+                  "defaultReason": "可考慮較高的風鏡，通常能降低風壓與疲勞，需留意視線與風噪。",
+                  "priority": 3
+                }
+              ]
+            },
+            "advanced": {
+              "name": "進階",
+              "includes": "starter",
+              "budgetLevel": 2,
+              "budgetNote": "多為較大件或需專業安裝的項目，總預算通常明顯高於入門。",
+              "items": [
+                {
+                  "slotId": "moto-seat",
+                  "defaultReason": "可考慮更舒適的座墊，通常能延長長途騎乘時間，需注意座高與腳距。",
+                  "priority": 4
+                },
+                {
+                  "slotId": "tires",
+                  "defaultReason": "建議挑選舒適耐磨取向的輪胎，通常能降低震動並提升濕地抓地。",
+                  "priority": 5
+                },
+                {
+                  "slotId": "shock-absorbers",
+                  "defaultReason": "可考慮舒適取向的後避震，通常能改善路面顛簸，需依體重調整預壓。",
+                  "priority": 6
+                },
+                {
+                  "slotId": "handlebars",
+                  "defaultReason": "可考慮調整把手高度或形狀，通常能改善騎姿，需留意全寬與操控。",
+                  "priority": 7
+                }
+              ]
+            },
+            "extreme": {
+              "name": "極致",
+              "includes": "advanced",
+              "budgetLevel": 3,
+              "budgetNote": "含高單價、需整體搭配或安裝工時多的項目，總預算通常最高，建議先確認使用場景再投入。",
+              "items": [
+                {
+                  "slotId": "fork-springs-cartridge",
+                  "defaultReason": "可考慮前叉彈簧或油壓套件調整，通常能改善前輪吸震，需專業調校。",
+                  "priority": 8
+                },
+                {
+                  "slotId": "bluetooth-intercom",
+                  "defaultReason": "可考慮藍牙通訊耳機，通常能提升導航與通話便利，建議挑選防水與電力足夠的款式。",
+                  "priority": 9
+                },
+                {
+                  "slotId": "luggage-rack",
+                  "defaultReason": "可考慮後貨架與行李箱，通常能改善載物能力，需注意載重與全寬限制。",
+                  "priority": 10
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "economy",
+      "name": "省油",
+      "description": "以降低油耗與維護成本為目標，著重輪胎、保養與駕駛資訊，不追求動力提升。",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ],
+      "variants": [
+        {
+          "vehicleType": "car",
+          "note": "以保養與降阻為主；刻意避開高流量排氣與大幅動力升級。",
+          "tiers": {
+            "starter": {
+              "name": "入門",
+              "includes": null,
+              "budgetLevel": 1,
+              "budgetNote": "以耗材與小件為主，單項花費通常較低，多可自行評估後分次施作。",
+              "items": [
+                {
+                  "slotId": "tires",
+                  "defaultReason": "建議挑選低滾動阻力的輪胎，通常有助於降低油耗，同時需兼顧濕地抓地與安全。",
+                  "priority": 1
+                },
+                {
+                  "slotId": "tpms",
+                  "defaultReason": "可考慮胎壓偵測器，保持胎壓正確通常能避免滾動阻力增加。",
+                  "priority": 2
+                },
+                {
+                  "slotId": "engine-oil",
+                  "defaultReason": "建議使用原廠建議黏度的機油並定期更換，有助於維持潤滑與燃燒效率。",
+                  "priority": 3
+                },
+                {
+                  "slotId": "spark-plugs",
+                  "defaultReason": "建議依原廠週期更換火星塞，通常能維持穩定燃燒，避免因老化造成油耗增加。",
+                  "priority": 4
+                },
+                {
+                  "slotId": "air-filter",
+                  "defaultReason": "建議定期更換或清潔空氣濾芯，通常能維持進氣順暢，不需追求高流量款式。",
+                  "priority": 5
+                }
+              ]
+            },
+            "advanced": {
+              "name": "進階",
+              "includes": "starter",
+              "budgetLevel": 2,
+              "budgetNote": "多為較大件或需專業安裝的項目，總預算通常明顯高於入門。",
+              "items": [
+                {
+                  "slotId": "alignment",
+                  "defaultReason": "建議重新做四輪定位，通常能減少輪胎偏磨與行駛阻力。",
+                  "priority": 6
+                },
+                {
+                  "slotId": "wheels",
+                  "defaultReason": "可考慮輕量化輪圈，通常能降低簧下重量，對加減速有幫助，需注意尺寸與原廠相近。",
+                  "priority": 7
+                },
+                {
+                  "slotId": "gauges",
+                  "defaultReason": "可考慮附加儀表（如油耗與水溫），通常能幫助您調整駕駛習慣。",
+                  "priority": 8
+                }
+              ]
+            },
+            "extreme": {
+              "name": "極致",
+              "includes": "advanced",
+              "budgetLevel": 3,
+              "budgetNote": "含高單價、需整體搭配或安裝工時多的項目，總預算通常最高，建議先確認使用場景再投入。",
+              "items": [
+                {
+                  "slotId": "ecu-tune",
+                  "defaultReason": "在硬體正常的前提下，可考慮以省油為目標的 ECU 調校，通常效果依車款差異大，建議找有經驗的廠商並先確認相關規定。",
+                  "priority": 9
+                },
+                {
+                  "slotId": "window-tint",
+                  "defaultReason": "可考慮隔熱紙，通常有助降低車內溫度與冷氣負荷，需注意透光率與合格標識。",
+                  "priority": 10
+                }
+              ]
+            }
+          }
+        },
+        {
+          "vehicleType": "motorcycle",
+          "note": "以保養與維持原廠狀態為主，避免提高油耗的改裝。",
+          "tiers": {
+            "starter": {
+              "name": "入門",
+              "includes": null,
+              "budgetLevel": 1,
+              "budgetNote": "以耗材與小件為主，單項花費通常較低，多可自行評估後分次施作。",
+              "items": [
+                {
+                  "slotId": "tires",
+                  "defaultReason": "建議挑選適合通勤的輪胎並維持正確胎壓，通常有助於降低油耗並提升耐用。",
+                  "priority": 1
+                },
+                {
+                  "slotId": "tpms",
+                  "defaultReason": "可考慮胎壓偵測器，保持胎壓正確通常能避免滾動阻力增加。",
+                  "priority": 2
+                },
+                {
+                  "slotId": "engine-oil",
+                  "defaultReason": "建議使用原廠建議規格的機油並定期更換，有助於維持潤滑與燃燒效率。",
+                  "priority": 3
+                },
+                {
+                  "slotId": "spark-plugs",
+                  "defaultReason": "建議依原廠週期更換火星塞，通常能維持穩定燃燒。",
+                  "priority": 4
+                },
+                {
+                  "slotId": "air-filter",
+                  "defaultReason": "建議定期更換或清潔空氣濾芯，通常能維持進氣順暢。",
+                  "priority": 5
+                }
+              ]
+            },
+            "advanced": {
+              "name": "進階",
+              "includes": "starter",
+              "budgetLevel": 2,
+              "budgetNote": "多為較大件或需專業安裝的項目，總預算通常明顯高於入門。",
+              "items": [
+                {
+                  "slotId": "sprocket-chain",
+                  "defaultReason": "可考慮換成較省力的齒盤鏈條組並保持潤滑，通常能減少傳動損耗，齒比需依用途微調。",
+                  "priority": 6
+                },
+                {
+                  "slotId": "cvt-kit",
+                  "defaultReason": "速克達可考慮調整 CVT 傳動套件，通常能改變起步與巡航取向，建議選擇偏省油調校並找有經驗的廠商。",
+                  "priority": 7
+                },
+                {
+                  "slotId": "gauges",
+                  "defaultReason": "可考慮附加儀表（如油耗與轉速），通常能幫助調整騎乘習慣。",
+                  "priority": 8
+                }
+              ]
+            },
+            "extreme": {
+              "name": "極致",
+              "includes": "advanced",
+              "budgetLevel": 3,
+              "budgetNote": "含高單價、需整體搭配或安裝工時多的項目，總預算通常最高，建議先確認使用場景再投入。",
+              "items": [
+                {
+                  "slotId": "ecu-tune",
+                  "defaultReason": "在硬體正常的前提下，可考慮以省油為目標的 ECU 調校，通常效果依車款差異大，建議先確認相關規定。",
+                  "priority": 9
+                },
+                {
+                  "slotId": "windscreen",
+                  "defaultReason": "可考慮適當的風鏡，通常在中高速巡航時降低風阻與疲勞，需留意視線。",
+                  "priority": 10
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "offroad",
+      "name": "越野",
+      "description": "以通過性、保護與牽引安全為核心，優先處理輪胎、護板與基礎裝備，再進入懸吊與牽引升級。",
+      "appliesTo": [
+        "car",
+        "motorcycle"
+      ],
+      "variants": [
+        {
+          "vehicleType": "car",
+          "note": "以 SUV／皮卡等具備一定離地間隙的車款為對象；越野取向的懸吊與外加配件請務必先確認規定。",
+          "tiers": {
+            "starter": {
+              "name": "入門",
+              "includes": null,
+              "budgetLevel": 1,
+              "budgetNote": "以耗材與小件為主，單項花費通常較低，多可自行評估後分次施作。",
+              "items": [
+                {
+                  "slotId": "all-terrain-tires",
+                  "defaultReason": "建議優先換上全地形胎，通常能顯著改善泥地、砂石的抓地，日常鋪裝路面噪音可能增加。",
+                  "priority": 1
+                },
+                {
+                  "slotId": "skid-plate",
+                  "defaultReason": "可考慮底盤／油底殼護板，通常能降低托底造成的損傷風險。",
+                  "priority": 2
+                },
+                {
+                  "slotId": "tow-hook",
+                  "defaultReason": "建議備妥牽引鉤與牽引繩，通常能在受困時提高脫困安全性，需確認固定點強度。",
+                  "priority": 3
+                }
+              ]
+            },
+            "advanced": {
+              "name": "進階",
+              "includes": "starter",
+              "budgetLevel": 2,
+              "budgetNote": "多為較大件或需專業安裝的項目，總預算通常明顯高於入門。",
+              "items": [
+                {
+                  "slotId": "offroad-lift-kit",
+                  "defaultReason": "可考慮越野升高套件，通常能增加離地間隙與輪胎空間，需先確認車高與登記相關規定。",
+                  "priority": 4
+                },
+                {
+                  "slotId": "shock-absorbers",
+                  "defaultReason": "搭配升高時建議更換越野取向避震器，通常能提升吸震與行程。",
+                  "priority": 5
+                },
+                {
+                  "slotId": "auxiliary-lights",
+                  "defaultReason": "可考慮輔助燈，通常能改善夜間越野視野，建議僅限適當場地使用並先確認規定。",
+                  "priority": 6
+                },
+                {
+                  "slotId": "roof-rack",
+                  "defaultReason": "可考慮車頂架，通常能增加載物能力，需確認載重與安裝規定。",
+                  "priority": 7
+                },
+                {
+                  "slotId": "bull-bar",
+                  "defaultReason": "可考慮前保桿，通常能提供前方保護與配件安裝點，需留意尺寸與安裝規定。",
+                  "priority": 8
+                }
+              ]
+            },
+            "extreme": {
+              "name": "極致",
+              "includes": "advanced",
+              "budgetLevel": 3,
+              "budgetNote": "含高單價、需整體搭配或安裝工時多的項目，總預算通常最高，建議先確認使用場景再投入。",
+              "items": [
+                {
+                  "slotId": "winch",
+                  "defaultReason": "可考慮絞盤，通常能在深陷時自行脫困，建議了解載重與安全使用方式。",
+                  "priority": 9
+                },
+                {
+                  "slotId": "fender-flares",
+                  "defaultReason": "搭配大尺寸輪胎時可考慮外擴葉子板，通常能避免輪胎摩擦，需留意車寬與登記規定。",
+                  "priority": 10
+                },
+                {
+                  "slotId": "lsd",
+                  "defaultReason": "可考慮差速鎖或限滑差速器，通常能改善單輪空轉時的通過性。",
+                  "priority": 11
+                },
+                {
+                  "slotId": "wheels",
+                  "defaultReason": "可考慮強化越野輪圈，通常能提升耐衝擊度，需與輪胎規格配合。",
+                  "priority": 12
+                }
+              ]
+            }
+          }
+        },
+        {
+          "vehicleType": "motorcycle",
+          "note": "以 Dual Sport／Adventure 與越野用途為主。",
+          "tiers": {
+            "starter": {
+              "name": "入門",
+              "includes": null,
+              "budgetLevel": 1,
+              "budgetNote": "以耗材與小件為主，單項花費通常較低，多可自行評估後分次施作。",
+              "items": [
+                {
+                  "slotId": "all-terrain-tires",
+                  "defaultReason": "建議優先換上雙用途或越野胎，通常能顯著改善泥地、砂石的抓地，鋪裝路面磨耗與噪音可能增加。",
+                  "priority": 1
+                },
+                {
+                  "slotId": "hand-guards",
+                  "defaultReason": "可考慮護手，通常能保護手部並擋風擋雨，也有助於減少摔車時的拉桿斷裂風險。",
+                  "priority": 2
+                },
+                {
+                  "slotId": "skid-plate",
+                  "defaultReason": "可考慮引擎護板，通常能降低石頭與托底造成的損傷風險。",
+                  "priority": 3
+                }
+              ]
+            },
+            "advanced": {
+              "name": "進階",
+              "includes": "starter",
+              "budgetLevel": 2,
+              "budgetNote": "多為較大件或需專業安裝的項目，總預算通常明顯高於入門。",
+              "items": [
+                {
+                  "slotId": "crash-bar",
+                  "defaultReason": "可考慮防摔保桿，通常能在倒車時保護車殼與引擎，需注意不影響冷卻與車寬。",
+                  "priority": 4
+                },
+                {
+                  "slotId": "handlebars",
+                  "defaultReason": "可考慮越野取向把手，通常能改善站姿控車，需留意全寬與線路長度。",
+                  "priority": 5
+                },
+                {
+                  "slotId": "shock-absorbers",
+                  "defaultReason": "可考慮越野取向後避震，通常能提升吸震與行程，需依體重調整預壓。",
+                  "priority": 6
+                },
+                {
+                  "slotId": "luggage-rack",
+                  "defaultReason": "可考慮後貨架或側箱，通常能支援長途與載物，需注意載重與車寬。",
+                  "priority": 7
+                },
+                {
+                  "slotId": "auxiliary-lights",
+                  "defaultReason": "可考慮輔助燈，通常能改善夜間視野，建議僅限適當場地使用並先確認規定。",
+                  "priority": 8
+                }
+              ]
+            },
+            "extreme": {
+              "name": "極致",
+              "includes": "advanced",
+              "budgetLevel": 3,
+              "budgetNote": "含高單價、需整體搭配或安裝工時多的項目，總預算通常最高，建議先確認使用場景再投入。",
+              "items": [
+                {
+                  "slotId": "fork-springs-cartridge",
+                  "defaultReason": "可考慮前叉彈簧或油壓套件，通常能改善跳躍與落地吸震，需專業調校。",
+                  "priority": 9
+                },
+                {
+                  "slotId": "wheels",
+                  "defaultReason": "可考慮輻條輪框，通常較能承受衝擊，需與輪胎規格配合。",
+                  "priority": 10
+                },
+                {
+                  "slotId": "sprocket-chain",
+                  "defaultReason": "可考慮調整齒比，通常能改善低速扭力，極速取向會略降。",
+                  "priority": 11
+                },
+                {
+                  "slotId": "ecu-tune",
+                  "defaultReason": "在進排氣調整後，可考慮搭配 ECU 調校，通常能優化油氣，需先確認相關規定。",
+                  "priority": 12
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "stance",
+      "name": "低趴",
+      "description": "以降低車高與輪圈／車身貼合度為主的造型取向，需特別留意車高、輪胎外露與檢驗規定。",
+      "appliesTo": [
+        "car"
+      ],
+      "variants": [
+        {
+          "vehicleType": "car",
+          "note": "機車沒有對應的低趴取向，因此僅提供汽車版本；車高與輪胎外露請務必對照 legal-notes.json。",
+          "tiers": {
+            "starter": {
+              "name": "入門",
+              "includes": null,
+              "budgetLevel": 1,
+              "budgetNote": "以耗材與小件為主，單項花費通常較低，多可自行評估後分次施作。",
+              "items": [
+                {
+                  "slotId": "lowering-springs",
+                  "defaultReason": "可考慮短彈簧，通常成本較低、可降低車高，但搭配原廠避震時壽命與舒適度可能受影響。",
+                  "priority": 1
+                },
+                {
+                  "slotId": "wheel-spacers",
+                  "defaultReason": "可考慮墊寬片，通常能調整輪圈位置，需留意輪胎外露限制與螺絲長度。",
+                  "priority": 2
+                },
+                {
+                  "slotId": "tires",
+                  "defaultReason": "建議配合輪圈尺寸挑選合適扁平比的輪胎，通常需兼顧外觀與行車安全。",
+                  "priority": 3
+                }
+              ]
+            },
+            "advanced": {
+              "name": "進階",
+              "includes": "starter",
+              "budgetLevel": 2,
+              "budgetNote": "多為較大件或需專業安裝的項目，總預算通常明顯高於入門。",
+              "items": [
+                {
+                  "slotId": "wheels",
+                  "defaultReason": "可考慮更換輪圈，通常是改變車身站姿最明顯的項目，需注意尺寸與外露限制。",
+                  "priority": 4
+                },
+                {
+                  "slotId": "shock-absorbers",
+                  "defaultReason": "搭配短彈簧時建議更換對應的替換避震器，通常能改善阻尼與壽命。",
+                  "priority": 5
+                },
+                {
+                  "slotId": "alignment",
+                  "defaultReason": "降低車高後建議重新做四輪定位，通常能減少輪胎偏磨與改善直行穩定。",
+                  "priority": 6
+                }
+              ]
+            },
+            "extreme": {
+              "name": "極致",
+              "includes": "advanced",
+              "budgetLevel": 3,
+              "budgetNote": "含高單價、需整體搭配或安裝工時多的項目，總預算通常最高，建議先確認使用場景再投入。",
+              "items": [
+                {
+                  "slotId": "coilovers",
+                  "defaultReason": "可考慮可調式避震組，通常能更精準調整車高與阻尼，並可取代前述短彈簧加避震組合。",
+                  "priority": 7
+                },
+                {
+                  "slotId": "fender-flares",
+                  "defaultReason": "可考慮外擴葉子板，通常能包覆更寬的輪胎，需留意車寬與登記規定。",
+                  "priority": 8
+                },
+                {
+                  "slotId": "front-lip",
+                  "defaultReason": "可考慮前下巴，通常能強化低趴後的造型，需注意離地高度與突出幅度。",
+                  "priority": 9
+                },
+                {
+                  "slotId": "side-skirts",
+                  "defaultReason": "可考慮側裙，通常能讓車身線條更連貫，需注意離地高度。",
+                  "priority": 10
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
