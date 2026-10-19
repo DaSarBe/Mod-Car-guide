@@ -3,7 +3,7 @@ import {
   compatibleOptions, fitsSummary, refLabel, pickedEntries, sumPrices, sumPicks, checkIssues,
   pruneIncompatible, filterCatalog, availableFacets, encodeShare, decodeShare, sortedCategories,
   slotLegal, optionLegal, themesForType, findVariant, tierIds, tierName, resolveTierItems, tierPlan,
-  hasVehicleParts, priceBasisLabel, isUnitUncertain, shopLabel,
+  hasVehicleParts, priceBasisLabel, isUnitUncertain, shopLabel, brandSummary, needsYearCheck, searchVehicles, makeKeyOf,
 } from "./logic.js";
 
 const STORAGE_KEY = "kaizou-planner:v3";
@@ -22,6 +22,8 @@ const FOLD_AT = 4;
 const expandedSlots = new Set();
 
 let catalog = null;
+let partsReady = false;
+let partsError = null;
 const state = {
   step: "type",
   sel: { ...EMPTY_SEL },
@@ -128,7 +130,7 @@ function legalBadge(legal) {
 
 /** 選項的標記；被 legalOverride 改過的加註「依商品標示」，避免讀成已確認合法。 */
 function optionBadge(info) {
-  if (!info?.override) return legalBadge(info?.legal);
+  if (!info?.override || info.legal !== "ok") return legalBadge(info?.legal);
   return `<span class="badge-group">${legalBadge(info.legal)}<span class="badge-sub">依商品標示</span></span>`;
 }
 
@@ -167,10 +169,11 @@ function overrideBlock(slot, option) {
   const { reason, source } = info.override;
   const was = info.inheritedLegal ? `部位預設為「${LEGAL_LABELS[info.inheritedLegal]}」；` : "";
   const url = safeUrl(source);
+  const ok = info.legal === "ok";
   return `<div class="legal legal--${esc(info.legal)} legal--override">
-    <p class="legal__head">${ICON.info}<span>${esc(was)}此款依商品標示列為「${esc(LEGAL_LABELS[info.legal])}」</span></p>
-    ${reason ? `<p><span class="muted">標示內容：</span>${esc(reason)}</p>` : ""}
-    <p class="legal__caveat">這是依賣家或廠商頁面的說法，本站未核對認證編號，不代表已確認合法；仍須自行確認車輛型式對應，並依規定辦理登錄或變更登記。</p>
+    <p class="legal__head">${ok ? ICON.info : ICON.warn}<span>${esc(was)}此款${ok ? "依商品標示列為" : "另標為"}「${esc(LEGAL_LABELS[info.legal])}」</span></p>
+    ${reason ? `<p class="legal__reason"><span class="muted">${ok ? "標示內容" : "理由"}：</span>${esc(reason)}</p>` : ""}
+    ${ok ? `<p class="legal__caveat">這是依賣家或廠商頁面的說法，本站未核對認證編號，不代表已確認合法；仍須自行確認車輛型式對應，並依規定辦理登錄或變更登記。</p>` : ""}
     ${url ? `<p class="legal__src"><span class="muted">標示來源：</span><a href="${esc(url)}" target="_blank" rel="noopener">${esc(hostOf(url) || "查看")}</a></p>` : ""}
   </div>`;
 }
@@ -209,7 +212,8 @@ function fitsBlock(option, { summary = true } = {}) {
   const links = f.sources.map(safeUrl).filter(Boolean);
   return `<div class="opt__fit">
     ${summary ? `<p><span class="muted">適用車款</span>${esc(fitsSummary(catalog, option))}</p>` : ""}
-    ${f.note ? `<p class="opt__yearnote">${f.universal ? "" : "適用範圍提示："}${esc(f.note)}</p>` : ""}
+    ${f.note ? `<p class="opt__yearnote"><strong>${f.universal ? "通用品限制" : "適用範圍"}</strong>${esc(f.note)}</p>` : ""}
+    ${needsYearCheck(option, state.sel.type) ? `<p class="hint hint--year">${ICON.info}<span>請向賣家確認適用年份</span></p>` : ""}
     ${links.length ? `<details class="src"><summary>適配依據</summary>${links.map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(hostOf(u) || u)}</a>`).join("")}</details>` : ""}
   </div>`;
 }
@@ -278,11 +282,13 @@ function optionCard(slot, option) {
       <span class="opt__who"><span class="opt__brand">${esc(option.brand)}</span>${shopLabel(option) ? `<span class="opt__shop${option.purchase?.isAffiliate ? " opt__shop--aff" : ""}">${esc(shopLabel(option))}${option.purchase?.isAffiliate ? "・分潤" : ""}</span>` : ""}</span>
       ${optionBadge(info)}
     </div>
+    ${overrideBlock(slot, option)}
     <h4 class="opt__name">${esc(option.name)}</h4>
+    ${directionChips(option)}
     ${priceLine(option)}
     ${fitsBlock(option)}
     ${difficulty(option)}
-    ${overrideBlock(slot, option)}
+    ${reviewBlock(option)}
     ${relationHints(option)}
     ${purchaseBlock(option)}
     ${sourceBlock(option)}
@@ -327,11 +333,56 @@ function renderHeader() {
 
 /* ---------- step views ---------- */
 
+let vq = "";
+
+function vehicleSearch(type) {
+  const ph = type === "motorcycle" ? "例如：MMBCU、勁戰、DRG" : type === "car" ? "例如：Civic、RAV4、GR86" : "例如：Civic、RAV4、MMBCU、勁戰";
+  return `<div class="vsearch" role="search">
+    <label class="field field--search">
+      <span class="sr-only">直接搜尋車款</span>
+      <input id="vq" type="search" enterkeyhint="search" placeholder="直接搜尋車款，${esc(ph)}" value="${esc(vq)}" autocomplete="off" data-type="${esc(type || "")}">
+    </label>
+    <div id="vsResults" aria-live="polite">${vehicleResults(type)}</div>
+  </div>`;
+}
+
+function vehicleResults(type) {
+  if (!vq.trim()) return "";
+  const hits = searchVehicles(catalog, vq, type || null);
+  if (!hits.length) return `<p class="vsearch__empty">找不到「${esc(vq.trim())}」，試試英文車型名或車商名稱。</p>`;
+  const shown = hits.slice(0, 20);
+  return `<ul class="vsearch__list">${shown.map(v => {
+    const g = v.gens;
+    const span = g.length ? `${g[0].yearFrom}–${g[g.length - 1].ongoing ? "" : g[g.length - 1].yearTo}` : "";
+    return `<li><button class="vs-item" type="button" data-action="pick-vehicle" data-id="${esc(v.id)}">
+      <span class="vs-item__main"><span class="vs-item__title">${esc(v.makeZh || v.make)} ${esc(v.model)}</span>
+      <span class="vs-item__meta">${esc(typeLabel(v.type))}・${esc(span)}</span></span>
+      ${partsReady ? (hasVehicleParts(catalog, v.id) ? `<span class="tag tag--ok">有改裝品資料</span>` : pendingTag()) : ""}
+      ${ICON.chev}
+    </button></li>`;
+  }).join("")}</ul>${hits.length > shown.length ? `<p class="vsearch__empty">還有 ${hits.length - shown.length} 款，請再多打幾個字縮小範圍。</p>` : ""}`;
+}
+
+function viewLoadingParts() {
+  if (partsError) return errorView(partsError);
+  return `<section class="view"><div class="loading"><span class="spinner" aria-hidden="true"></span><p>正在載入改裝品資料…</p></div></section>`;
+}
+
+function errorView(err) {
+  return `<div class="empty empty--error" role="alert">
+    <h1 class="view__title" tabindex="-1">資料載入失敗</h1>
+    <p>${esc(err.message)}</p>
+    <p class="muted">${location.protocol === "file:" ? "請用本機伺服器開啟（例如 python3 -m http.server），直接點開檔案無法讀取資料。" : "請檢查網路連線後再試一次。"}</p>
+    <button class="btn btn--primary" type="button" onclick="location.reload()">重新載入</button>
+  </div>`;
+}
+
 function viewType() {
   return `<section class="view">
     <p class="eyebrow">第一步</p>
     <h1 class="view__title" tabindex="-1">你要改的是哪一種車？</h1>
     <p class="lead">選好車種、車商、車款與年式，只會顯示適用你這台車的部位與改裝品。</p>
+    ${vehicleSearch(null)}
     <div class="grid grid--2">
       ${catalog.types.map(t => `<button class="card card--type${state.sel.type === t.type ? " is-selected" : ""}" type="button" data-action="type" data-id="${esc(t.type)}">
         <span class="card__art">${ICON[t.type] || ICON.car}</span>
@@ -347,10 +398,11 @@ function viewMake() {
   return `<section class="view">
     <p class="eyebrow">${esc(typeLabel(type?.type))}</p>
     <h1 class="view__title" tabindex="-1">選擇車商</h1>
-    <div class="grid grid--list">
-      ${(type?.makes || []).map(m => `<button class="card card--row${state.sel.makeKey === m.key ? " is-selected" : ""}" type="button" data-action="make" data-id="${esc(m.key)}">
-        <span class="card__title">${esc(m.name)}</span>
-        <span class="card__meta">${m.vehicles.length} 款</span>${ICON.chev}
+    ${vehicleSearch(type?.type)}
+    <div class="grid grid--makes">
+      ${(type?.makes || []).map(m => `<button class="card card--make${state.sel.makeKey === m.key ? " is-selected" : ""}" type="button" data-action="make" data-id="${esc(m.key)}">
+        <span class="card__title">${esc(m.nameZh && m.nameZh !== m.name ? m.nameZh : m.name)}</span>
+        <span class="card__meta">${m.nameZh && m.nameZh !== m.name ? `${esc(m.nameEn || m.name)}・` : ""}${m.vehicles.length} 款</span>
       </button>`).join("")}
     </div>
   </section>`;
@@ -467,7 +519,7 @@ function packagePanel() {
   const ids = tierIds(variant);
   if (!ids.includes(state.tier)) state.tier = ids[0];
   const tier = variant.tiers[state.tier] || {};
-  const plan = tierPlan(catalog, variant, state.tier, vehicle(), state.picks);
+  const plan = tierPlan(catalog, variant, state.tier, vehicle(), state.picks, state.themeId);
   const withOpts = plan.filter(p => p.shown);
   const total = sumPrices(withOpts.map(p => p.shown));
   const pending = plan.length - withOpts.length;
@@ -562,12 +614,41 @@ function foldedOptions(slot, options) {
   const open = expandedSlots.has(slot.id);
   const shown = open ? options : options.filter((o, i) => i < FOLD_AT || state.picks[slot.id] === o.id);
   const rest = options.length - shown.length;
-  return `<div class="opt-grid">${shown.map(o => optionCard(slot, o)).join("")}</div>
-    ${rest ? `<button class="btn btn--ghost btn--block more-btn" type="button" data-action="expand-slot" data-slot="${esc(slot.id)}">顯示其餘 ${rest} 款</button>` : ""}`;
+  const restUniversal = options.filter(o => o.fits.universal && !shown.includes(o)).length;
+  return `${groupedCards(slot, shown)}
+    ${rest ? `<button class="btn btn--ghost btn--block more-btn" type="button" data-action="expand-slot" data-slot="${esc(slot.id)}">顯示其餘 ${rest} 款${restUniversal ? `（含 ${restUniversal} 款通用品）` : ""}</button>` : ""}`;
+}
+
+/** 車款專用品在前，通用品另成一區。 */
+function groupedCards(slot, options) {
+  const own = options.filter(o => !o.fits.universal);
+  const uni = options.filter(o => o.fits.universal);
+  return `${own.length ? `<div class="opt-grid">${own.map(o => optionCard(slot, o)).join("")}</div>` : ""}
+    ${uni.length ? `<h4 class="opt-group">通用品<span>不限車款，請看各款的限制條件</span></h4><div class="opt-grid">${uni.map(o => optionCard(slot, o)).join("")}</div>` : ""}`;
+}
+
+function brandTag(options) {
+  const b = brandSummary(options);
+  if (b.brands !== 1) return "";
+  return `<span class="tag tag--one">${b.options === 1 ? "目前只找到 1 款" : "目前只找到 1 個品牌"}</span>`;
+}
+
+function directionChips(option) {
+  if (!option.directionTags.length) return "";
+  const names = option.directionTags.map(id => catalog.themes.find(t => t.id === id)).filter(Boolean);
+  if (!names.length) return "";
+  return `<p class="dir-tags"><span class="muted">適合方向</span>${names.map(t => `<span class="dir-tag${t.id === state.themeId ? " is-on" : ""}">${esc(t.name)}</span>`).join("")}</p>`;
+}
+
+function reviewBlock(option) {
+  const r = option.reviewNote;
+  if (!r) return "";
+  const url = safeUrl(r.source);
+  return `<blockquote class="review"><p><strong>車評說法</strong>${esc(r.text)}</p>${url ? `<a href="${esc(url)}" target="_blank" rel="noopener">出處：${esc(hostOf(url) || url)}</a>` : ""}</blockquote>`;
 }
 
 function resultsHtml() {
-  const groups = filterCatalog(catalog, vehicle(), state.filters);
+  const groups = filterCatalog(catalog, vehicle(), state.filters, state.themeId);
   const slotCount = groups.reduce((n, g) => n + g.slots.length, 0);
   const optCount = groups.reduce((n, g) => n + g.slots.reduce((m, s) => m + s.options.length, 0), 0);
   const clear = filtersActive() ? '<button class="link" type="button" data-action="clear-filters">清除篩選</button>' : "";
@@ -583,7 +664,7 @@ function resultsHtml() {
           <div class="slot__head">
             <h3 class="slot__name">${esc(slot.name)}</h3>
             ${legalBadge(sl?.legal)}
-            ${total ? `<span class="slot__count">${options.length < total ? `${options.length}/${total}` : total} 款</span>` : pendingTag()}
+            ${total ? `<span class="slot__count">${options.length < total ? `${options.length}/${total}` : total} 款</span>${brandTag(options)}` : pendingTag()}
           </div>
           ${slotLegalBlock(slot)}
           ${options.length ? foldedOptions(slot, options) : ""}
@@ -603,14 +684,14 @@ function openSheet(id) {
 function renderSlotSheet(slotId) {
   const slot = catalog.slotById.get(slotId);
   if (!slot) return;
-  const options = compatibleOptions(slot, vehicle());
+  const options = compatibleOptions(slot, vehicle(), state.themeId);
   const sl = slotLegal(catalog, slot.id, state.sel.type);
   $("#slotSheet").dataset.slot = slotId;
   $("#slotSheetTitle").textContent = `比較：${slot.name}`;
   $("#slotSheetBody").innerHTML = `<p class="muted sheet__sub">${esc(slot.category)}・同一部位只會保留一款，換款式會自動替換並重算總預算。</p>
-    <div class="pkg-item__meta">${legalBadge(sl?.legal)}</div>
+    <div class="pkg-item__meta">${legalBadge(sl?.legal)}${brandTag(options)}</div>
     ${slotLegalBlock(slot, { open: true })}
-    ${options.length ? `<div class="opt-grid">${options.map(o => optionCard(slot, o)).join("")}</div>` : `<div class="empty"><p>${pendingTag()}</p><p class="muted">這個部位適用此車款的品牌選項${PENDING}。</p></div>`}`;
+    ${options.length ? groupedCards(slot, options) : `<div class="empty"><p>${pendingTag()}</p><p class="muted">這個部位適用此車款的品牌選項${PENDING}。</p></div>`}`;
 }
 
 function renderListSheet() {
@@ -711,7 +792,7 @@ function render({ focus = false } = {}) {
   state.step = clampStep(state.step);
   renderHeader();
   const views = { type: viewType, make: viewMake, model: viewModel, year: viewYear, direction: viewDirection, parts: viewParts };
-  main.innerHTML = views[state.step]();
+  main.innerHTML = partsReady || stepIndex(state.step) <= 1 ? views[state.step]() : viewLoadingParts();
   renderDock();
   syncSheets();
   if (focus) {
@@ -798,6 +879,13 @@ document.addEventListener("click", e => {
     case "model":
       if (state.sel.vehicleId !== id) Object.assign(state.sel, { vehicleId: id, year: null, gen: null });
       go("year"); break;
+    case "pick-vehicle": {
+      const v = catalog.vehicleById.get(id);
+      if (!v) break;
+      if (state.sel.vehicleId !== id) state.sel = { ...EMPTY_SEL, type: v.type, makeKey: makeKeyOf(v), vehicleId: id };
+      vq = "";
+      go("year"); break;
+    }
     case "year":
       Object.assign(state.sel, { year: Number(id), gen: Number(gen) });
       applyVehicleChange();
@@ -829,7 +917,7 @@ document.addEventListener("click", e => {
     case "add-all": {
       const cur = current();
       if (!cur) break;
-      const plan = tierPlan(catalog, cur.variant, state.tier, vehicle(), state.picks);
+      const plan = tierPlan(catalog, cur.variant, state.tier, vehicle(), state.picks, state.themeId);
       let n = 0;
       for (const p of plan) {
         if (p.shown && state.picks[p.slot.id] !== p.shown.id) { state.picks[p.slot.id] = p.shown.id; n++; }
@@ -894,6 +982,12 @@ for (const d of document.querySelectorAll("dialog.sheet")) {
 
 let qTimer;
 document.addEventListener("input", e => {
+  if (e.target.id === "vq") {
+    vq = e.target.value;
+    const r = $("#vsResults");
+    if (r) r.innerHTML = vehicleResults(e.target.dataset.type);
+    return;
+  }
   if (e.target.id !== "q") return;
   clearTimeout(qTimer);
   qTimer = setTimeout(() => { state.filters.q = e.target.value; refreshResults(); }, 150);
@@ -914,7 +1008,7 @@ window.addEventListener("popstate", e => {
 
 /* ---------- boot ---------- */
 
-const DATA_FILES = ["vehicles.json", "slots.json", "parts.json", "themes.json", "legal-notes.json"];
+const BASE_FILES = ["vehicles.json", "slots.json", "themes.json", "legal-notes.json"];
 
 async function fetchJson(name) {
   const res = await fetch(`data/${name}`, { cache: "no-cache" });
@@ -922,30 +1016,26 @@ async function fetchJson(name) {
   try { return await res.json(); } catch { throw new Error(`data/${name} 不是有效的 JSON`); }
 }
 
-async function boot() {
+function storedNeedsParts() {
   try {
-    const [vehicles, slotsData, parts, themes, legalNotes] = await Promise.all(DATA_FILES.map(fetchJson));
-    catalog = buildCatalog({ vehicles, slotsData, parts, themes, legalNotes });
-  } catch (err) {
-    main.innerHTML = `<div class="empty empty--error" role="alert">
-      <h1 class="view__title">資料載入失敗</h1>
-      <p>${esc(err.message)}</p>
-      <p class="muted">${location.protocol === "file:" ? "請用本機伺服器開啟（例如 python3 -m http.server），直接點開檔案無法讀取資料。" : "請檢查網路連線後再試一次。"}</p>
-      <button class="btn btn--primary" type="button" onclick="location.reload()">重新載入</button>
-    </div>`;
-    return;
-  }
+    const raw = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+    return !!raw && (stepIndex(raw.step) > 1 || Object.keys(raw.picks || {}).length > 0);
+  } catch { return false; }
+}
+
+function applyCatalogMeta() {
   if (catalog.orphanPartSlots.length) {
     console.info("[改裝規劃室] parts.json 有 slots.json 沒有的 slotId，已略過：", catalog.orphanPartSlots.join(", "));
   }
-
   if (catalog.note) {
     $("#sampleBanner").textContent = catalog.note;
     $("#sampleBanner").hidden = false;
   }
   $("#affiliateNote").hidden = !catalog.hasAffiliate;
   if (catalog.legal.disclaimer) $("#footerDisclaimer").textContent = catalog.legal.disclaimer;
+}
 
+function startFromStorage() {
   load();
   const shared = decodeShare(location.hash, catalog);
   if (shared) {
@@ -962,6 +1052,44 @@ async function boot() {
     history.replaceState({ step: state.step }, "", location.pathname + location.search + location.hash);
     render({ focus: true });
   }
+}
+
+/**
+ * parts.json 最大（約 1.6 MB），一開始就背景下載；車種、車商與車款搜尋只需要小檔，
+ * 先畫出來。有分享連結或上次已選到車款以後的步驟時，等 parts 到齊再還原。
+ */
+async function boot() {
+  const partsP = fetchJson("parts.json");
+  partsP.catch(() => {});
+  let base;
+  try {
+    const [vehicles, slotsData, themes, legalNotes] = await Promise.all(BASE_FILES.map(fetchJson));
+    base = { vehicles, slotsData, themes, legalNotes };
+  } catch (err) {
+    main.innerHTML = errorView(err);
+    return;
+  }
+
+  const waitParts = location.hash.length > 1 || storedNeedsParts();
+  if (!waitParts) {
+    catalog = buildCatalog({ ...base, parts: null });
+    applyCatalogMeta();
+    startFromStorage();
+  }
+  try {
+    catalog = buildCatalog({ ...base, parts: await partsP });
+    partsReady = true;
+  } catch (err) {
+    partsError = err;
+    if (waitParts) { main.innerHTML = errorView(err); return; }
+    if (stepIndex(state.step) > 1) render();
+    return;
+  }
+  applyCatalogMeta();
+  if (waitParts) return startFromStorage();
+  if (stepIndex(state.step) > 1) return render();
+  const r = $("#vsResults");
+  if (r) r.innerHTML = vehicleResults($("#vq")?.dataset.type);
 }
 
 boot();

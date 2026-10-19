@@ -120,6 +120,10 @@ export function normalizeOption(o) {
     purchase: normalizePurchase(o),
     legalOverride: normalizeLegalOverride(o),
     vehicleType: o.vehicleType || null,
+    directionTags: Array.isArray(o.directionTags) ? o.directionTags.filter(t => typeof t === "string" && t) : [],
+    reviewNote: o.reviewNote && typeof o.reviewNote === "object" && typeof o.reviewNote.text === "string" && o.reviewNote.text
+      ? { text: o.reviewNote.text, source: typeof o.reviewNote.source === "string" ? o.reviewNote.source : "" }
+      : null,
   };
 }
 
@@ -215,6 +219,19 @@ export function resolveSelection(catalog, sel = {}) {
   return { type: t, make, vehicle, gen: year ? gen : null, year };
 }
 
+const fold = s => String(s || "").toLowerCase().normalize("NFKC").replace(/[\s\-_./（）()·・]/g, "");
+
+/** 車款快速搜尋：比對車商（中英）、車型、id 與世代名稱；每個關鍵字都要命中。 */
+export function searchVehicles(catalog, query, type = null) {
+  const words = String(query || "").trim().split(/\s+/).map(fold).filter(Boolean);
+  if (!words.length) return [];
+  return catalog.vehicles.filter(v => {
+    if (type && v.type !== type) return false;
+    const hay = fold([v.make, v.makeZh, v.makeEn, v.model, v.id, ...(v.gens || []).map(g => g.name)].join(" "));
+    return words.every(w => hay.includes(w));
+  });
+}
+
 export function hasVehicleParts(catalog, vehicleId) {
   return catalog.vehiclesWithParts.has(vehicleId);
 }
@@ -294,11 +311,32 @@ export function isCompatible(option, vehicle) {
   return !!vehicle?.vehicleId && option.fits.vehicleIds.includes(vehicle.vehicleId);
 }
 
-/** 明列車款的選項排在通用品前面（各自維持資料順序），避免通用品洗版。 */
-export function compatibleOptions(slot, vehicle) {
+/**
+ * 排序：明列車款的選項在前、通用品在後（避免通用品洗版）；
+ * 各組內 directionTags 含目前改裝方向的排前面，其餘維持資料順序。
+ */
+export function orderOptions(options, themeId = null) {
+  const byTag = list => (themeId
+    ? [...list.filter(o => o.directionTags?.includes(themeId)), ...list.filter(o => !o.directionTags?.includes(themeId))]
+    : list);
+  return [...byTag(options.filter(o => !o.fits.universal)), ...byTag(options.filter(o => o.fits.universal))];
+}
+
+export function compatibleOptions(slot, vehicle, themeId = null) {
   if (!slotAppliesTo(slot, vehicle?.type)) return [];
-  const fit = (slot?.options || []).filter(o => isCompatible(o, vehicle));
-  return [...fit.filter(o => !o.fits.universal), ...fit.filter(o => o.fits.universal)];
+  return orderOptions((slot?.options || []).filter(o => isCompatible(o, vehicle)), themeId);
+}
+
+/** 品牌數；只有 1 個品牌時畫面標「目前只找到 1 款」（多款同品牌則標「1 個品牌」）。 */
+export function brandSummary(options) {
+  const brands = new Set(options.map(o => o.brand));
+  return { brands: brands.size, options: options.length };
+}
+
+const YEAR_RE = /(19|20)\d{2}/;
+/** 機車的車款專用品，適用範圍說明裡沒有任何年份時，提醒向賣家確認適用年份。 */
+export function needsYearCheck(option, vehicleType) {
+  return vehicleType === "motorcycle" && !option.fits.universal && !YEAR_RE.test(option.fits.note || "");
 }
 
 export function slotsForType(catalog, type) {
@@ -363,12 +401,12 @@ export function resolveTierItems(variant, tierId) {
 }
 
 /** 套組的每個部位：預設款式為該部位第一個適用選項；使用者已選的同部位款式優先。 */
-export function tierPlan(catalog, variant, tierId, vehicle, picks = {}) {
+export function tierPlan(catalog, variant, tierId, vehicle, picks = {}, themeId = null) {
   return resolveTierItems(variant, tierId)
     .map(it => {
       const slot = catalog.slotById.get(it.slotId);
       if (!slot || !slotAppliesTo(slot, vehicle?.type)) return null;
-      const options = compatibleOptions(slot, vehicle);
+      const options = compatibleOptions(slot, vehicle, themeId);
       const picked = options.find(o => o.id === picks[slot.id]) || null;
       return {
         slot, why: it.defaultReason || "", priority: it.priority, options,
@@ -444,14 +482,14 @@ export function sortedCategories(catalog, categories) {
  * 依車款篩選部位與選項。沒有選項的部位仍會列出（options 為空），
  * 但使用品牌或價格篩選時只留下有符合選項的部位。
  */
-export function filterCatalog(catalog, vehicle, f = {}) {
+export function filterCatalog(catalog, vehicle, f = {}, themeId = null) {
   const q = (f.q || "").trim().toLowerCase();
   const optionFilter = (f.brand && f.brand !== "all") || (f.price && f.price !== "all");
   const groups = new Map();
   for (const slot of slotsForType(catalog, vehicle?.type)) {
     if (f.category && f.category !== "all" && slot.category !== f.category) continue;
     const slotHit = !q || `${slot.name} ${slot.category} ${slot.id}`.toLowerCase().includes(q);
-    const all = compatibleOptions(slot, vehicle);
+    const all = compatibleOptions(slot, vehicle, themeId);
     const options = all.filter(o => {
       if (f.legalOnly && optionLegal(catalog, slot, o, vehicle?.type)?.legal !== "ok") return false;
       if (f.brand && f.brand !== "all" && o.brand !== f.brand) return false;
