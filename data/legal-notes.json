@@ -64,42 +64,50 @@
       "slotId": "exhaust-catback",
       "vehicleType": "car",
       "legal": "risky",
-      "legalNote": "改裝排氣管請留意：尾端出口應位於車輛後方、不得突出車身兩側、最低點離地不少於十公分（列為檢驗項目）；使用中車輛噪音超標可能被通知到檢並處罰。是否需另行認證或登記請向監理單位確認。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
-      "basis": "道路交通安全規則附件十五（汽車設備變更，排氣管）；噪音管制法第11、25條；道路交通管理處罰條例第16條",
+      "legalNote": "改裝排氣管請留意：尾端出口應位於車輛後方、不得突出車身兩側、最低點離地不少於十公分（列為檢驗項目）；使用中車輛噪音超標可能被通知到檢並處罰。是否需另行認證或登記請向監理單位確認。噪音管制法第26條（114-12-26 修正公布）已將車輛違反噪音管制標準之罰鍰提高為 NT$3,600～36,000，屆期未改善且情節重大或一年內再犯得吊扣牌照。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五（汽車設備變更，排氣管）；噪音管制法第11、25條；道路交通管理處罰條例第16條；噪音管制法第26條（114-12-26 修正）",
       "source": "https://laws.gov.taipei/law/File/0000403808",
       "sourceMore": [
         "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=O0030001",
         "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=16&pcode=K0040012",
-        "https://noisecar.moenv.gov.tw/CarSilencer/Downloads/%E6%A9%9F%E5%8B%95%E8%BB%8A%E8%BC%9B%E5%99%AA%E9%9F%B3%E7%AE%A1%E5%88%B6%E6%A8%99%E6%BA%96.pdf"
+        "https://noisecar.moenv.gov.tw/CarSilencer/Downloads/%E6%A9%9F%E5%8B%95%E8%BB%8A%E8%BC%9B%E5%99%AA%E9%9F%B3%E7%AE%A1%E5%88%B6%E6%A8%99%E6%BA%96.pdf",
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=26&pcode=O0030001"
       ]
     },
     {
       "slotId": "exhaust-slip-on",
       "vehicleType": "motorcycle",
       "legal": "risky",
-      "legalNote": "自114年1月1日起，更換非原型式排氣管須使用經環境部噪音管制認證且對應該機車型式的排氣管，並經合法業者辦理、繳驗統一發票、監理機關檢驗合格後辦理變更登記；另需有隔熱防護、尾管出口位於後方且角度符合規定，排氣管數量與左右側位置不得變更。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
-      "basis": "道路交通安全規則附件十五（機車排氣管）；第23-1條；環境部替換用消音系統認證管理規範；處罰條例第16條",
+      "legalNote": "自114年1月1日起，更換非原型式排氣管須使用經環境部噪音管制認證且對應該機車型式的排氣管，並經合法業者辦理、繳驗統一發票、監理機關檢驗合格後辦理變更登記；另需有隔熱防護、尾管出口位於後方且角度符合規定，排氣管數量與左右側位置不得變更。2026-03-31 起（道路交通管理處罰條例第16條第2項 114-11-19 修正、115-03-31 施行），非原型式排氣管未依規定申報異動登記者，按最高額加倍處罰（NT$3,600），並責令15日內檢驗，逾期15日以上吊扣牌照、逾期2個月以上註銷牌照。另噪音管制法第26條（114-12-26 修正公布）將車輛違反噪音管制標準罰鍰提高為 NT$3,600～36,000，屆期未改善且情節重大或一年內再犯得吊扣牌照。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五（機車排氣管）；第23-1條；環境部替換用消音系統認證管理規範；處罰條例第16條第2項（115-03-31 施行）；噪音管制法第26條（114-12-26 修正）",
       "source": "https://168.motc.gov.tw/theme/news/post/2503271551401",
       "sourceMore": [
         "https://laws.gov.taipei/law/File/0000403808",
         "https://oaout.moenv.gov.tw/law/LawContent.aspx?id=GL007897",
         "https://noisecar.moenv.gov.tw/CarSilencer/Home/QA",
         "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
-        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=16&pcode=K0040012"
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=16&pcode=K0040012",
+        "https://gazette.nat.gov.tw/EG_FileManager/eguploadpub/eg032056/ch01/type1/gov01/num1/Eg.pdf",
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=26&pcode=O0030001",
+        "https://www.motc.gov.tw/ch/app/data/view?id=14&module=news&serno=b8a08d37-2e04-4fd4-91c6-6eaf470955b0"
       ]
     },
     {
       "slotId": "exhaust-full-system",
       "vehicleType": "motorcycle",
       "legal": "risky",
-      "legalNote": "機車排氣管變更須留意認證、由合法業者辦理、取得統一發票、通過檢驗並辦理變更登記；全段排氣若涉及取代或移除觸媒，另須留意空污法關於不得拆除或改裝未經認證污染防制設備的規定。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
-      "basis": "道路交通安全規則附件十五（機車排氣管）；空氣污染防制法第37條",
+      "legalNote": "自114年1月1日起，機車更換非原型式排氣管須使用經環境部噪音管制認證且對應該機車型式的排氣管；變更須留意認證、由合法業者辦理、取得統一發票、通過檢驗並辦理變更登記；全段排氣若涉及取代或移除觸媒，另須留意空污法關於不得拆除或改裝未經認證污染防制設備的規定。2026-03-31 起（道路交通管理處罰條例第16條第2項 114-11-19 修正、115-03-31 施行），非原型式排氣管未依規定申報異動登記者，按最高額加倍處罰（NT$3,600），並責令15日內檢驗，逾期15日以上吊扣牌照、逾期2個月以上註銷牌照。另噪音管制法第26條（114-12-26 修正公布）將車輛違反噪音管制標準罰鍰提高為 NT$3,600～36,000，屆期未改善且情節重大或一年內再犯得吊扣牌照。實際請以車輛規格與當地監理單位、合格廠商確認為準。",
+      "basis": "道路交通安全規則附件十五（機車排氣管）；空氣污染防制法第37條；道路交通管理處罰條例第16條第2項（115-03-31 施行）；噪音管制法第26條（114-12-26 修正）",
       "source": "https://168.motc.gov.tw/theme/news/post/2503271551401",
       "sourceMore": [
         "https://laws.gov.taipei/law/File/0000403808",
         "https://oaout.moenv.gov.tw/law/LawContent.aspx?id=GL007897",
         "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=37&pcode=O0020001",
-        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013"
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=23-1&pcode=K0040013",
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=16&pcode=K0040012",
+        "https://gazette.nat.gov.tw/EG_FileManager/eguploadpub/eg032056/ch01/type1/gov01/num1/Eg.pdf",
+        "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=26&pcode=O0030001",
+        "https://www.motc.gov.tw/ch/app/data/view?id=14&module=news&serno=b8a08d37-2e04-4fd4-91c6-6eaf470955b0"
       ]
     },
     {

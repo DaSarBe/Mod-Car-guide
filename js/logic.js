@@ -124,6 +124,7 @@ export function normalizeOption(o) {
     reviewNote: o.reviewNote && typeof o.reviewNote === "object" && typeof o.reviewNote.text === "string" && o.reviewNote.text
       ? { text: o.reviewNote.text, source: typeof o.reviewNote.source === "string" ? o.reviewNote.source : "" }
       : null,
+    stockNote: typeof o.stockNote === "string" && o.stockNote.trim() ? o.stockNote.trim() : "",
   };
 }
 

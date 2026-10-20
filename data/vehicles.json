@@ -1961,6 +1961,58 @@
    ],
    "source": "https://motor.u-car.com.tw/motor/article/77632",
    "note": "機車年式依台灣上市/發表新聞報導的日期；yearTo 推估自下一世代發表年。"
+  },
+  {
+   "id": "kymco-k1e",
+   "type": "motorcycle",
+   "make": "光陽 Kymco",
+   "makeZh": "光陽",
+   "makeEn": "Kymco",
+   "model": "K1 E 125（K1E 125）",
+   "generations": [
+    {
+     "name": "K1 E 125（鼓煞 SZ25BE／碟煞 SZ25BF）",
+     "yearFrom": 2026,
+     "yearTo": 2026,
+     "ongoing": true,
+     "note": "U-CAR：2026-08-20 報導光陽推出 K1 E 125（經濟日報 2026-08-19 發表）。2026 年 9 月領牌 1,716 輛、車款排行第 9（地球黃金線／U-CAR 9 月銷售報告）。與「新 K1 特仕版」（kymco-k1）為不同車型（單槍後避震、燈泡大燈、指針式儀表），改裝件不可直接沿用。"
+    }
+   ],
+   "source": "https://motor.u-car.com.tw/motor/article/89477",
+   "sources": [
+    "https://motor.u-car.com.tw/motor/article/89477",
+    "https://www.kymco.com.tw/motor/k1e",
+    "https://money.udn.com/money/story/5612/9701990",
+    "https://cars.tvbs.com.tw/car-news/342046",
+    "https://motor.u-car.com.tw/motor/article/89842"
+   ],
+   "note": "機車年式依台灣上市/發表新聞報導的日期；yearTo 推估自下一世代發表年。"
+  },
+  {
+   "id": "kymco-laddi-115",
+   "type": "motorcycle",
+   "make": "光陽 Kymco",
+   "makeZh": "光陽",
+   "makeEn": "Kymco",
+   "model": "Laddi 115",
+   "generations": [
+    {
+     "name": "Laddi 115（SA23BA）",
+     "yearFrom": 2026,
+     "yearTo": 2026,
+     "ongoing": true,
+     "note": "ETtoday／U-CAR：光陽 2026-04-14 發表、4 月上市，接替 Nice 115 車系（外型與 Nice LED 幾乎相同）。2026 年 9 月與 Nice 115 合計 1,642 輛、車款排行第 10（地球黃金線；U-CAR 記 Laddi 115 單款 1,632 輛）。本筆不含 Nice 115，Nice 改裝件是否可共用須向賣場確認。"
+    }
+   ],
+   "source": "https://motor.u-car.com.tw/motor/article/87416",
+   "sources": [
+    "https://motor.u-car.com.tw/motor/article/87416",
+    "https://www.kymco.com.tw/motor/laddi",
+    "https://speed.ettoday.net/news/3149190",
+    "https://cars.tvbs.com.tw/car-news/342046",
+    "https://motor.u-car.com.tw/motor/article/89842"
+   ],
+   "note": "機車年式依台灣上市/發表新聞報導的日期；yearTo 推估自下一世代發表年。"
   }
  ]
 }

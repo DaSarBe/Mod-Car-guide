@@ -286,6 +286,7 @@ function optionCard(slot, option) {
     <h4 class="opt__name">${esc(option.name)}</h4>
     ${directionChips(option)}
     ${priceLine(option)}
+    ${stockNoteBlock(option)}
     ${fitsBlock(option)}
     ${difficulty(option)}
     ${reviewBlock(option)}
@@ -638,6 +639,11 @@ function directionChips(option) {
   const names = option.directionTags.map(id => catalog.themes.find(t => t.id === id)).filter(Boolean);
   if (!names.length) return "";
   return `<p class="dir-tags"><span class="muted">適合方向</span>${names.map(t => `<span class="dir-tag${t.id === state.themeId ? " is-on" : ""}">${esc(t.name)}</span>`).join("")}</p>`;
+}
+
+function stockNoteBlock(option) {
+  if (!option.stockNote) return "";
+  return `<p class="hint hint--stock">${ICON.warn}<span>${esc(option.stockNote)}</span></p>`;
 }
 
 function reviewBlock(option) {

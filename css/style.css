@@ -508,6 +508,7 @@ details.legal[open] > summary::after { content: "收合"; }
 .dir-tag.is-on { color: var(--accent); border-color: var(--accent); }
 .opt__yearnote strong { display: inline-block; margin-right: 6px; font-size: 12px; color: var(--text); }
 .hint--year { color: var(--confirm); }
+.hint--stock { color: var(--confirm); }
 .legal__reason { font-size: 14px; }
 .review { margin: 0; padding: 8px 12px; border-left: 3px solid #9fd0ff; background: var(--bg-2); border-radius: 0 10px 10px 0; font-size: 14px; display: flex; flex-direction: column; gap: 4px; }
 .review strong { display: block; font-size: 12px; color: #9fd0ff; }
